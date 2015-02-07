@@ -1,0 +1,152 @@
+<?php
+// define possibilities array.
+/*function possibilities(){
+  $possibilities = array();
+  $default_options = array(
+    0 => 'Hillside Pizza',
+    1 => 'Panera',
+    2 => 'Monkey Bar',
+    3 => 'Big Y',
+    4 => 'Taco Mañana',
+    5 => 'Aldies',
+  );
+  foreach($default_options as $d) {
+    array_push($possibilities, $d);
+  }
+  if (isset($arg)) {
+    array_push($possibilities, $arg);
+  }
+  return $possibilities;
+}*/
+function chewsa_menu(){
+  $items = array();
+  $items['chewsa'] = array(
+    'title' => 'Chewsa Your Restauranté',
+    'description' => 'random restaurant chewsa',
+    'page callback' => 'backdrop_get_form',
+    'page arguments' => array('chewsa_form'),
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function chewsa_form($form, &$form_state){
+  $form['title'] = array(
+    '#markup' => '<h4>Choose Some Restaurants</h4>',
+    '#attached' => array(
+      'css' => array(
+        backdrop_get_path('module', 'chewsa') . '/css/chewsa.css'
+      ),
+    ),
+  );
+  // testing taxonomy as options list.
+  /*$my_opts = taxonomy_get_tree(3);
+  $mellow_opts = array();
+  foreach($my_opts as $opt) {
+    if ($opt->depth == 0) {
+      $mellow_opts[] = $opt->name;
+    }
+    elseif($opt->depth == 1) {
+      $mellow_opts[] = ' - ' . $opt->name;
+    }
+    elseif($opt->depth == 2) {
+      $mellow_opts[] = ' -- ' . $opt->name;
+    }
+  }*/
+  /*if ( isset($tree) ) {
+    $content .= '<select class="your-class">';
+    $content .= '<option class="placeholder" value="">You Dropdown</option>';
+    foreach ($tree as $term) {
+      $path = taxonomy_term_path($term);
+      //$content .= '<option value="/terms/' . strtolower(str_replace( " ", "-",$term->name)) . '">' . $term->name . '</option>';
+      dpm($path);
+    }
+    $content .= '</select>';
+  }//end if ( $view )*/
+
+  /*$form['my-opts'] = array(
+    '#type' => 'select',
+    '#options' => $mellow_opts,
+  );*/
+  $form['more'] = array(
+    '#prefix' => '<div class="my-more">',
+    '#suffix' => '</div>',
+  );
+  $form['more']['add_possibility'] = array(
+    '#title' => 'Add an option:',
+    '#type' => 'textfield',
+    '#size' => '33',
+  );
+  $markup = <<<HTML
+    <div class="add-button">
+      Add Choice.
+    </div>
+HTML;
+  $form['more']['add_button'] = array(
+    '#markup' => $markup,
+    /*'#value' => t('Add'),
+    '#ajax' => array(
+      //'callback' => 'chewsa_add_possibility',
+    ),*/
+  );
+  $form['possibilities'] = array(
+    '#type' => 'select',
+    '#title' => 'Possibilities',
+    '#multiple' => TRUE,
+    '#options' => '',
+    '#size' => '7',
+    '#required' => TRUE,
+  );
+  $form['reset_button'] = array(
+    '#markup' => '<input id="reset" type="reset" value="Reset" />',
+  );
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pick!'),
+    '#ajax' => array(
+      'callback' => 'chewsa_ajax_form',
+      'wrapper' => 'chewsa-form',
+    ),
+    '#suffix' => '<div class="form-result"></div>',
+  );
+  return $form;
+}
+
+function chewsa_form_validate($form, &$form_state){
+  if(!($form_state['values']['possibilities'])){
+    form_set_error('possibilities', t('You must pick at least one restaurant.'));
+  }
+}
+
+/*
+ * I was trying to use this to dynamically add choices;
+ * aborted for javascript;
+ */
+/*function chewsa_add_possibility(&$form, $form_state) {
+  array_push($possibilities, $form_state['more']['add_button']['value']);
+  $form_state['rebuild'] = TRUE;
+}*/
+
+function chewsa_ajax_form(&$form, &$form_state){
+  //$element = render($form);
+  $possibilities = $form_state['values']['possibilities'];
+  $choices = array();
+  if(!form_get_errors()) {
+    /*foreach ($form_state['values']['possibilities'] as $p) {
+      array_push($choices, $possibilities[$p]);
+    }*/
+    $i = rand(0, count($possibilities) - 1);
+    debug($form_state['values']['possibilities']);
+    $element = <<<DFF
+    <div class="after-form">
+    <p>And the winner is ... </p>
+    <div class="winner">
+      {$possibilities[$i]}
+    </div>
+    <p>Let's eat.</p>
+    <p>Return to <a href="/chewsa">Chewsa</a></p>
+    </div>
+DFF;
+  }
+  return $element;
+}

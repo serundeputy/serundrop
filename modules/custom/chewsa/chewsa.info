@@ -1,0 +1,6 @@
+name = "Chewsa Restaurant"
+description = "Chewsa restaurant for lunch."
+;package = "Geoff's Modules"
+backdrop = 1.x
+version = BACKDROP_VERSION
+files[] = chewsa.module
