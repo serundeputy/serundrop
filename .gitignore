@@ -19,3 +19,11 @@ stylesheets
 .idea
 *.idea/*
 
+
+# Ignoring these modules while they are less than stable.
+modules/contrib/codefilter/
+modules/contrib/date/
+modules/contrib/formblock/
+modules/contrib/pathauto/
+modules/contrib/token/
+modules/contrib/webform/
