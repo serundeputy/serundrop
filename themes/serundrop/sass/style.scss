@@ -1644,3 +1644,22 @@ div.admin-panel .description {
 .logo img {
   width: 112px;
 }
+
+/* --------- serundrop about page ---------> */
+div.block-left,
+div.block-right {
+  border: 1px solid #bebebe;
+  border-radius: 7px;
+  float: left;
+  width: 45%;
+  margin: 1%;
+  h3 {
+    padding: 3px 0px 3px 0px;
+    background: #000;
+    color: #bebebe;
+    text-align: center;
+  }
+  p {
+    padding: 9px;
+  }
+}

@@ -1,0 +1,49 @@
+<?php
+/**
+ * Implements hook_menu()
+ */
+function serundrop_about_menu() {
+  $items = array();
+  $items['about'] = array(
+    'title' => '{{ about the drop }}',
+    'description' => 'A page about me and serundrop',
+    'page callback' => 'serundrop_about_page',
+    'page arguments' => array(),
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Page callback for serundrop_about
+ */
+function serundrop_about_page() {
+  $html = <<<HTML
+<div class="block-left">
+  <h3>{ serundeputy }</h3>
+  <p>
+    In lots of places on the internet I am <code class="inline-code">serundeputy</code>.
+    I like to write code: <code class="inline-code">PHP</code>, <code class="inline-code">C++</code>
+    and some other languages.
+  </p>
+  <p>
+    This site is made in <a href="https://backdropcms.org">Backdrop CMS</a> a PHP application that is a fork of
+    <a href="https://drupal.org">Drupal</a>.
+  </p>
+</div>
+<div class="block-right">
+  <h3>{ About the About Page }</h3>
+  <p>
+    This page is defined in code.  In a custom backdrop module.
+    <br />
+    The module implements <span class="inline-code">hook_menu()</span>, which
+    defines a page callback function <span class="inline-code">serundrop_about_page()</span>
+    which contains the html of this page.
+    <br />
+    It is my goto hello world module.
+  </p>
+</div>
+HTML;
+  return $html;
+}
+
