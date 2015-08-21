@@ -13,7 +13,6 @@ sites/*/private
 
 # Ignore sass stuff.
 .sass-cache
-stylesheets
 
 # Ignore PHPStorm stuff.
 .idea
