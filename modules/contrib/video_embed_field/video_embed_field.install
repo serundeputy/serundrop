@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the video_embed_field module.
+ */
+
+/**
+ * Install file for video_embed_field module
+ * @author jcaldwell
+ */
+
+/**
+ * Implements hook_field_schema().
+ */
+function video_embed_field_field_schema($field) {
+  switch ($field['type']) {
+    case 'video_embed_field':
+      $columns = array(
+        'video_url' => array(
+          'type' => 'varchar',
+          'length' => 512,
+          'default' => '',
+        ),
+        'thumbnail_path' => array(
+          'type' => 'varchar',
+          'length' => 512,
+          'default' => '',
+        ),
+        'video_data' => array(
+          'type' => 'blob',
+          'not null' => FALSE,
+          'size' => 'big',
+          'serialize' => TRUE,
+        ),
+        'embed_code' => array(
+          'type' => 'varchar',
+          'length' => 1024,
+          'default' => '',
+        ),
+        'description' => array(
+          'type' => 'text',
+          'not null' => FALSE,
+        ),
+      );
+      $indexes = array();
+      break;
+  }
+
+  return array(
+    'columns' => $columns,
+    'indexes' => $indexes,
+  );
+}
+
+/**
+ * Implements hook_schema().
+ */
+function video_embed_field_schema() {
+  $schema['vef_video_styles'] = array(
+    'description' => 'Stores video embed styles.',
+    'export' => array(
+      'key' => 'name',
+      'identifier' => 'video_embed_style',
+      'default hook' => 'default_video_embed_styles',
+      'api' => array(
+        'owner' => 'video_embed_field',
+        'api' => 'default_video_embed_styles',
+        'minimum_version' => 1,
+        'current_version' => 1,
+      ),
+    ),
+    'fields' => array(
+      'name' => array(
+        'description' => 'The machine-readable option set name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'The human-readable title for this option set.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'data' => array(
+        'description' => 'The configuration data for the style.',
+        'type' => 'blob',
+        'size' => 'big',
+        'not null' => TRUE,
+        'serialize' => TRUE,
+      ),
+    ),
+    'primary key' => array('name'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function modulename_update_last_removed() {
+  return 7009;
+}
+
+/**
+ * Move video_embed_field settings from variables to config.
+ */
+function book_update_1000() {
+  // Migrate variables to config.
+  $config = config('video_embed_field.settings');
+  $config->set('colorbox_load', update_variable_get('colorbox_load', array('video_embed_field')));
+  $config->save();
+
+  // Delete variables.
+  update_variable_del('colorbox_load');
+}
