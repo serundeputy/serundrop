@@ -189,3 +189,8 @@ name = Views node revision relationship
 description = Tests the Views integration of node_revision table of node module.
 group = Node
 file = node_views_revision_relations.test
+
+; Added by Backdrop CMS packaging script on 2015-09-18
+project = backdrop
+version = 1.2.1
+timestamp = 1442612350

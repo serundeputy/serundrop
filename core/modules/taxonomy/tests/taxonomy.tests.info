@@ -18,7 +18,7 @@ file = taxonomy.test
 
 [TaxonomyLegacyTestCase]
 name = Test for legacy node bug.
-description = Posts an article with a taxonomy term and a date prior to 1970.
+description = Posts a post with a taxonomy term and a date prior to 1970.
 group = Taxonomy
 file = taxonomy.test
 
@@ -88,3 +88,8 @@ description = Tests the taxonomy term on node relationship handler for Views.
 group = Taxonomy
 file = taxonomy_views_handler_relationship_node_term_data.test
 
+
+; Added by Backdrop CMS packaging script on 2015-09-18
+project = backdrop
+version = 1.2.1
+timestamp = 1442612350
