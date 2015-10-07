@@ -2298,3 +2298,14 @@ div.block-left p,
 div.block-right p {
   padding: 9px;
 }
+
+/* line 1667, ../sass/style.scss */
+div.plebo-menu ul.menu li {
+  list-style: none;
+  float: left;
+  background-color: #ccc;
+  color: #444;
+  margin: 4px;
+  padding: 7px;
+  border-radius: 9px;
+}
