@@ -1,0 +1,4 @@
+name = Headless
+backdrop = 1.x
+description = "Serve Backdrop CMS Nodes as JSON objects."
+version = 1.x-1.0.0
