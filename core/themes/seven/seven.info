@@ -6,8 +6,11 @@ backdrop = 1.x
 stylesheets[screen][] = css/seven.fonts.css
 stylesheets[screen][] = css/seven.base.css
 stylesheets[screen][] = css/style.css
+stylesheets[screen][] = css/responsive-tabs.css
 
-; Added by Backdrop CMS packaging script on 2015-09-23
+scripts[] = js/script.js
+
+; Added by Backdrop CMS packaging script on 2016-01-15
 project = backdrop
-version = 1.2.2
-timestamp = 1443066066
+version = 1.3.0
+timestamp = 1452911961
