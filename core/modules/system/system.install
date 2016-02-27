@@ -457,16 +457,6 @@ function system_requirements($phase) {
       );
     }
     $requirements['update status']['title'] = $t('Update notifications');
-
-    // Check that Backdrop can issue HTTP requests.
-    if (state_get('backdrop_http_request_fails', TRUE) && !system_check_http_request()) {
-      $requirements['http requests'] = array(
-        'title' => $t('HTTP request status'),
-        'value' => $t('Fails'),
-        'severity' => REQUIREMENT_ERROR,
-        'description' => $t('Your system or network configuration does not allow Backdrop to access web pages, resulting in reduced functionality. This could be due to your webserver configuration or PHP settings, and should be resolved in order to download information about available updates or use other network-dependent services. If you are certain that Backdrop can access web pages but you are still seeing this message, you may add <code>$state[\'backdrop_http_request_fails\'] = FALSE;</code> to the bottom of your settings.php file.'),
-      );
-    }
   }
 
   if ($phase == 'runtime') {
@@ -2713,9 +2703,21 @@ function system_update_1049() {
     // If there are no color settings then the default (Blue Lagoon) was in use.
     if (config_get('bartik.settings', 'color') === NULL) {
       // Set a flag indicating that we should use the legacy style sheet.
-      config_set('bartik.settings', 'legacy', TRUE);
+      config_set('bartik.settings', 'color_legacy', TRUE);
     }
     config_set('bartik.settings', 'main_menu_tabs', 'rounded-tabs');
+  }
+}
+
+/**
+ * Fix legacy color setting in Bartik.
+ */
+function system_update_1050() {
+  $config = config('bartik.settings');
+  if ($config->get('legacy')) {
+    $config->set('color_legacy', TRUE);
+    $config->clear('legacy');
+    $config->save();
   }
 }
 
