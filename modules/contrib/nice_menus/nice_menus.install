@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Update functions for Nice menus.
+ */
+
+ 
+/**
+ * Convert module settings to use configuration files.
+ */
+function nice_menus_update_1000() {
+  // Get the number of custom menus installed.
+  $number = update_variable_get('nice_menus_number', '2');
+  // Migrate variables to config.
+  $config = config('nice_menus.settings');
+  $config->set('nice_menus_number', update_variable_get('nice_menus_number', 2));
+  $config->set('nice_menus_js', update_variable_get('nice_menus_js', 1));
+  $config->set('nice_menus_sf_delay', update_variable_get('nice_menus_sf_delay', 800));
+  $config->set('nice_menus_sf_speed', update_variable_get('nice_menus_sf_speed', 'slow'));
+  $config->set('nice_menus_custom_css', update_variable_get('nice_menus_custom_css', ''));
+  $config->set('menu_main_links_source', update_variable_get('menu_main_links_source', 'main-menu'));
+  $config->set('menu_secondary_links_source', update_variable_get('menu_secondary_links_source', 'user-menu'));
+  
+  // Set config for all custom menus.
+  for ($i = 1; $i <= $number; $i++) {
+    $config->set('nice_menus_name_' . $i, update_variable_get('nice_menus_name_' . $i, 'Nice menu ' . $i));
+    $config->set('nice_menus_menu_' . $i, update_variable_get('nice_menus_menu_' . $i, 'management:0'));
+    $config->set('nice_menus_depth_' . $i, update_variable_get('nice_menus_depth_' . $i, -1));
+    $config->set('nice_menus_type_' . $i, update_variable_get('nice_menus_type_' . $i, 'right'));
+    $config->set('nice_menus_respect_expand_' . $i, update_variable_get('nice_menus_respect_expand_' . $i, 0));
+  }
+  $config->save();
+  
+  update_variable_del('nice_menus_number');
+  update_variable_del('nice_menus_js');
+  update_variable_del('nice_menus_sf_delay');
+  update_variable_del('nice_menus_sf_speed');
+  update_variable_del('nice_menus_custom_css');
+  update_variable_del('menu_main_links_source');
+  update_variable_del('menu_secondary_links_source');
+  
+  for ($i = 1; $i <= $number; $i++) {
+    update_variable_del('nice_menus_name_' . $i);
+    update_variable_del('nice_menus_menu_' . $i);
+    update_variable_del('nice_menus_depth_' . $i);
+    update_variable_del('nice_menus_type_' . $i);
+    update_variable_del('nice_menus_respect_expand_' . $i);
+  }  
+}

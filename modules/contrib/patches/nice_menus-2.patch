@@ -1,0 +1,21 @@
+From d4afcc8a1aa65f1a4a2a50b4a10053587f483bc7 Mon Sep 17 00:00:00 2001
+From: "Geoff St. Pierre" <serundeputy@gmail.com>
+Date: Sun, 24 Jan 2016 15:50:31 -0500
+Subject: [PATCH] Issue #1: Remove block subject that shows on front end.
+
+---
+ nice_menus.module | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/nice_menus.module b/nice_menus.module
+index 20581d2..11039e7 100644
+--- a/nice_menus.module
++++ b/nice_menus.module
+@@ -302,7 +302,6 @@ function nice_menus_block_view($delta = 1) {
+     else {
+       $subject = $output['subject'];
+     }
+-    $block['subject'] = '<span class="' . $class . '">' . check_plain($subject) . '</span>';
+     $block['content']['#contextual_links']['simple_menus'] = array('admin/structure/menu/manage', array($menu_name));
+   }
+   else {
