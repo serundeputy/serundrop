@@ -2275,8 +2275,37 @@ div.admin-panel .description {
   width: 112px;
 }
 
-/* --------- serundrop about page ---------> */
+/* nice menus */
 /* line 1649, ../sass/style.scss */
+ul.nice-menu li {
+  background-color: #000;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+/* line 1653, ../sass/style.scss */
+ul.nice-menu li a {
+  color: #ccc;
+  padding: 4px;
+}
+/* line 1657, ../sass/style.scss */
+ul.nice-menu li a:hover {
+  text-decoration: none;
+}
+/* line 1661, ../sass/style.scss */
+ul.nice-menu li:hover {
+  background-color: #666;
+}
+/* line 1664, ../sass/style.scss */
+ul.nice-menu li.menuparent {
+  background-color: #000;
+}
+/* line 1667, ../sass/style.scss */
+ul.nice-menu li.menuparent:hover {
+  background-color: #666;
+}
+
+/* --------- serundrop about page ---------> */
+/* line 1673, ../sass/style.scss */
 div.block-left,
 div.block-right {
   border: 1px solid #bebebe;
@@ -2285,7 +2314,7 @@ div.block-right {
   width: 45%;
   margin: 1%;
 }
-/* line 1656, ../sass/style.scss */
+/* line 1680, ../sass/style.scss */
 div.block-left h3,
 div.block-right h3 {
   padding: 3px 0px 3px 0px;
@@ -2293,13 +2322,13 @@ div.block-right h3 {
   color: #bebebe;
   text-align: center;
 }
-/* line 1662, ../sass/style.scss */
+/* line 1686, ../sass/style.scss */
 div.block-left p,
 div.block-right p {
   padding: 9px;
 }
 
-/* line 1667, ../sass/style.scss */
+/* line 1691, ../sass/style.scss */
 div.plebo-menu ul.menu li {
   list-style: none;
   float: left;
