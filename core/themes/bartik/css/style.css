@@ -276,20 +276,22 @@ ul.tips {
 
 /* ------------------ Layout ------------------ */
 
-/* All layouts */
-.l-container,
-.l-top,
-.l-messages,
+/* Bootstrap layouts, restrict to 960px total width. */
+.container {
+  max-width: 920px;
+  padding: 0 20px;
+}
 
-/* Special wrapper added in template.php. */
-.l-header-inner,
-
-/* Bartik (three-three-four) layout specifics */
-.l-featured,
-.l-triptych,
-.l-footer-columns {
-  max-width: 960px;
+/* Legacy layouts, restrict to 960px total width. */
+.layout-legacy .l-container,
+.layout-legacy .l-top,
+.layout-legacy .l-messages,
+.layout-legacy .l-header-inner,
+.layout-legacy .l-featured,
+.layout-legacy .l-triptych,
+.layout-legacy .l-footer-columns {
   margin: 0 auto;
+  max-width: 960px;
   padding: 0 20px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -311,6 +313,7 @@ ul.tips {
   padding-top: 33px;
   margin-top: -33px;
 }
+.l-wrapper,
 .l-container,
 .l-triptych {
   -webkit-flex: 1 0 auto;
@@ -621,6 +624,12 @@ ul.tips {
 /* ----------------- Top ----------------- */
 
 .l-top {
+  margin-top: 20px;
+}
+
+/* ----------------- Bottom ----------------- */
+
+.l-bottom {
   margin-top: 20px;
 }
 
@@ -1230,21 +1239,21 @@ fieldset {
   border-radius: 4px;
 }
 .fieldset-wrapper {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 .node-form .vertical-tabs .fieldset-wrapper {
   margin-top: 0;
 }
 .filter-wrapper {
-  top: 0;
   padding: .5em 0;
+}
+.filter-wrapper legend,
+.filter-wrapper.collapsed legend {
   -moz-border-radius-topright: 0;
   -moz-border-radius-topleft: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-.filter-wrapper .fieldset-wrapper {
-  margin-top: 0;
+  border-top: none;
 }
 .filter-wrapper .form-item label {
   margin-right: 10px;
@@ -1468,8 +1477,7 @@ h2.comment-form {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
-.comment-form fieldset.filter-wrapper .fieldset-wrapper,
-.comment-form .text-format-wrapper .form-item {
+.comment-form .text-format-wrapper .form-type-textarea {
   margin-top: 0;
   margin-bottom: 0;
 }
