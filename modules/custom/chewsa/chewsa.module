@@ -143,7 +143,7 @@ function chewsa_ajax_form(&$form, &$form_state){
     <div class="winner">
       {$possibilities[$i]}
     </div>
-    <p>Let's eat.</p>
+    <p>Let&apos;s eat.</p>
     <p>Return to <a href="/chewsa">Chewsa</a></p>
     </div>
 DFF;
