@@ -124,7 +124,8 @@ description = Tests alterations to language types/negotiation info.
 group = Locale
 file = locale.test
 
-; Added by Backdrop CMS packaging script on 2016-06-22
-project = backdrop
-version = 1.4.3
-timestamp = 1466656516
+[LocaleStringIsSafeTest]
+name = Test if a string is safe
+description = Tests locale translation safe string handling.
+group = Locale
+file = locale.test

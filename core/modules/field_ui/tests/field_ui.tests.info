@@ -15,8 +15,3 @@ name = Widget customization
 description = Test custom field widget hooks and callbacks on field administration pages.
 group = Field UI
 file = field_ui.test
-
-; Added by Backdrop CMS packaging script on 2016-06-22
-project = backdrop
-version = 1.4.3
-timestamp = 1466656516

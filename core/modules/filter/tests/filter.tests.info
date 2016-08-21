@@ -69,8 +69,3 @@ name = Editor access
 description = Tests access to editors and their associated dialogs.
 group = Filter
 file = filter.test
-
-; Added by Backdrop CMS packaging script on 2016-06-22
-project = backdrop
-version = 1.4.3
-timestamp = 1466656516
