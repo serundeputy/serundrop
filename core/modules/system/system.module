@@ -1031,7 +1031,7 @@ function system_menu() {
   $items['system/transliterate/%'] = array(
     'page callback' => 'system_transliterate_ajax',
     'page arguments' => array(2),
-    'access arguments' => array('access content'),
+    'access callback' => 'system_transliterate_ajax_access',
     'type' => MENU_CALLBACK,
     'file' => 'system.admin.inc',
   );
@@ -2077,10 +2077,10 @@ function system_authorized_run($callback, $file, $arguments = array(), $page_tit
  *
  * @see batch_process()
  */
-function system_authorized_batch_process() {
+function system_authorized_batch_process($redirect_callback = 'backdrop_goto') {
   $finish_url = system_authorized_get_url();
   $process_url = system_authorized_batch_processing_url();
-  batch_process($finish_url, $process_url);
+  batch_process($finish_url, $process_url, $redirect_callback);
 }
 
 /**
@@ -3106,7 +3106,7 @@ function confirm_form($form, $question, $path, $description = NULL, $yes = NULL,
 
   // Prepare cancel link.
   if (isset($_GET['destination'])) {
-    $options = backdrop_parse_url(urldecode($_GET['destination']));
+    $options = backdrop_parse_url($_GET['destination']);
   }
   elseif (is_array($path)) {
     $options = $path;
