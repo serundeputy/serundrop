@@ -1,0 +1,20 @@
+{
+    "_config_name": "field.bundle.node.junk",
+    "bundle": "junk",
+    "entity_type": "node",
+    "view_modes": [],
+    "extra_fields": {
+        "form": {
+            "title": {
+                "weight": "-5"
+            },
+            "path": {
+                "weight": "30"
+            },
+            "redirect": {
+                "weight": "30"
+            }
+        },
+        "display": []
+    }
+}

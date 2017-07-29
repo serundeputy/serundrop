@@ -1,0 +1,41 @@
+{
+    "_config_name": "field.instance.node.vid_with_desc.field_da_vid_vid",
+    "field_name": "field_da_vid_vid",
+    "entity_type": "node",
+    "bundle": "vid_with_desc",
+    "label": "da vid vid",
+    "widget": {
+        "weight": "32",
+        "type": "video_embed_field_video",
+        "module": "video_embed_field",
+        "active": 0,
+        "settings": []
+    },
+    "description": "",
+    "required": 0,
+    "deleted": 0,
+    "default_value": null,
+    "default_value_function": null,
+    "settings": {
+        "allowed_providers": {
+            "youtube": "youtube",
+            "vimeo": "vimeo"
+        },
+        "description_field": 1,
+        "description_length": "128",
+        "user_register_form": false
+    },
+    "display": {
+        "default": {
+            "label": "above",
+            "type": "video_embed_field",
+            "settings": {
+                "video_style": "normal",
+                "description": 1,
+                "description_position": "bottom"
+            },
+            "module": "video_embed_field",
+            "weight": 1
+        }
+    }
+}

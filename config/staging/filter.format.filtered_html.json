@@ -1,0 +1,138 @@
+{
+    "_config_name": "filter.format.filtered_html",
+    "format": "filtered_html",
+    "name": "ckeditor",
+    "weight": 0,
+    "filters": {
+        "filter_image_caption": {
+            "status": 0,
+            "weight": 4,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_autop": {
+            "status": 1,
+            "weight": 2,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_url": {
+            "status": 1,
+            "weight": 0,
+            "settings": {
+                "filter_url_length": "72"
+            },
+            "module": "filter"
+        },
+        "filter_htmlcorrector": {
+            "status": 1,
+            "weight": 10,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_html_escape": {
+            "status": 0,
+            "weight": -10,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_image_align": {
+            "status": 0,
+            "weight": 5,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_html": {
+            "status": 1,
+            "weight": 1,
+            "settings": {
+                "allowed_html": "<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h3> <h4> <h5> <p> <img> <figure> <figcaption>",
+                "filter_html_help": 1,
+                "filter_html_nofollow": 0
+            },
+            "module": "filter"
+        },
+        "video_embed_field": {
+            "status": 0,
+            "weight": 0,
+            "module": "video_embed_field",
+            "settings": []
+        }
+    },
+    "cache": true,
+    "status": 1,
+    "editor": "ckeditor",
+    "editor_settings": {
+        "toolbar": [
+            [
+                {
+                    "name": "Formatting",
+                    "items": [
+                        "Bold",
+                        "Italic"
+                    ]
+                },
+                {
+                    "name": "Linking",
+                    "items": [
+                        "Link",
+                        "Unlink"
+                    ]
+                },
+                {
+                    "name": "Alignment",
+                    "items": [
+                        "JustifyLeft",
+                        "JustifyCenter",
+                        "JustifyRight"
+                    ]
+                },
+                {
+                    "name": "Lists",
+                    "items": [
+                        "BulletedList",
+                        "NumberedList"
+                    ]
+                },
+                {
+                    "name": "Media",
+                    "items": [
+                        "Blockquote",
+                        "BackdropImage"
+                    ]
+                },
+                {
+                    "name": "Tools",
+                    "items": [
+                        "Source",
+                        "Maximize"
+                    ]
+                }
+            ]
+        ],
+        "image_upload": {
+            "status": 1,
+            "scheme": "public",
+            "directory": "inline-images",
+            "max_size": "",
+            "max_dimensions": {
+                "width": "",
+                "height": ""
+            },
+            "dimensions": {
+                "max_width": "",
+                "max_height": ""
+            }
+        },
+        "plugins": {
+            "style": {
+                "style_list": []
+            }
+        }
+    },
+    "roles": {
+        "anonymous": "anonymous",
+        "authenticated": "authenticated",
+        "administrator": "administrator"
+    }
+}

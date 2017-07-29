@@ -1,0 +1,28 @@
+{
+    "_config_name": "filter.format.full_html",
+    "format": "full_html",
+    "name": "Full HTML",
+    "weight": 1,
+    "filters": {
+        "filter_url": {
+            "weight": 0,
+            "status": 1,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_autop": {
+            "weight": 1,
+            "status": 1,
+            "module": "filter",
+            "settings": []
+        },
+        "filter_htmlcorrector": {
+            "weight": 10,
+            "status": 1,
+            "module": "filter",
+            "settings": []
+        }
+    },
+    "cache": true,
+    "status": 1
+}
