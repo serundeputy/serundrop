@@ -17,10 +17,13 @@ www/sites/*/private
 # Ignore sass stuff.
 .sass-cache
 
+# Ignore stuff that shouldn't
+*.sql
+*.gz
+
 # Ignore PHPStorm stuff.
 .idea
 *.idea/*
-
 
 # Ignoring these modules while they are less than stable.
 modules/contrib/codefilter/
