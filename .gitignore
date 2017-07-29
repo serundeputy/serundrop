@@ -20,6 +20,7 @@ www/sites/*/private
 # Ignore stuff that shouldn't
 *.sql
 *.gz
+*.DS_Store
 
 # Ignore PHPStorm stuff.
 .idea
