@@ -1,4 +1,4 @@
-# Ignore this file so it can be changed 
+# Ignore this file so it can be changed
 
 
 # Ignore configuration files that may contain sensitive information.
@@ -6,10 +6,10 @@ settings.php
 sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
-files
-private
-sites/*/files
-sites/*/private
+www/files
+www/private
+www/sites/*/files
+www/sites/*/private
 
 # Ignore sass stuff.
 .sass-cache
@@ -21,8 +21,3 @@ sites/*/private
 
 # Ignoring these modules while they are less than stable.
 modules/contrib/codefilter/
-modules/contrib/date/
-modules/contrib/formblock/
-modules/contrib/pathauto/
-modules/contrib/token/
-modules/contrib/webform/
