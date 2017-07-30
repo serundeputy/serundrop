@@ -31,7 +31,7 @@
                         "items_per_page": "6"
                     }
                 },
-                "style_plugin": "default",
+                "style_plugin": "grid",
                 "row_plugin": "node",
                 "fields": {
                     "title": {
@@ -262,7 +262,12 @@
                     "row_class": "",
                     "default_row_class": 1,
                     "row_class_special": 1,
-                    "uses_fields": 1
+                    "uses_fields": 0,
+                    "columns": "2",
+                    "alignment": "horizontal",
+                    "fill_single_line": 1,
+                    "caption": "",
+                    "summary": ""
                 }
             }
         },

@@ -1,4 +1,28 @@
 
 .l-content {
-  
+
+}
+
+/* homepage flexbox for equal widths */
+// .row {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   flex-wrap: wrap;
+//
+//   td {
+//     vertical-align: top;
+//   }
+// }
+// .row > [class*='col-'] {
+//   display: flex;
+//   flex-direction: column;
+// }
+table {
+  table-layout: fixed;
+  td {
+    vertical-align: top;
+    width: 50%;
+  }
 }
