@@ -4,7 +4,8 @@
     "info": "{ twitter }",
     "title": "{twitter}",
     "body": {
-        "value": "<a class=\"twitter-timeline\" href=\"https://twitter.com/hashtag/backdropintheevening\" data-widget-id=\"564070598779760642\">#backdropintheevening Tweets</a>\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>",
+        "value": "<a class=\"twitter-timeline\" href=\"https://twitter.com/hashtag/backdropintheevening\" data-widget-id=\"564070598779760642\">#backdropintheevening Tweets</a>\r\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>",
         "format": "full_html"
-    }
+    },
+    "description": "A reusable custom block."
 }
