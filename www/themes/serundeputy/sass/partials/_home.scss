@@ -1,9 +1,11 @@
 .view-name-backdrops {
   table {
     table-layout: fixed;
+    border: none;
     td {
       vertical-align: top;
       width: 50%;
+      border: none;
     }
   }
 }
