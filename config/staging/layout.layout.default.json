@@ -16,11 +16,10 @@
     },
     "positions": {
         "header": [
-            "84c43df4-1165-4faf-8700-c362a7153c0b"
+            "84c43df4-1165-4faf-8700-c362a7153c0b",
+            "94473f17-274e-4d79-9204-4ac74c826bd0"
         ],
-        "top": [
-            "c5a84b13-57af-4490-a856-86a8c765ff29"
-        ],
+        "top": [],
         "content": [
             "default",
             "baf9122e-bdd8-4e5f-a500-d8753c2096ab"
@@ -59,38 +58,33 @@
                 }
             }
         },
-        "c5a84b13-57af-4490-a856-86a8c765ff29": {
-            "plugin": "menu:menu-plebo",
+        "94473f17-274e-4d79-9204-4ac74c826bd0": {
+            "plugin": "system:main-menu",
             "data": {
-                "module": "menu",
-                "delta": "menu-plebo",
+                "module": "system",
+                "delta": "main-menu",
                 "settings": {
                     "title_display": "none",
                     "title": "",
                     "style": "default",
-                    "block_settings": [],
+                    "block_settings": {
+                        "menu_name": "main-menu",
+                        "style": "dropdown",
+                        "level": "1",
+                        "depth": "0",
+                        "toggle": 1
+                    },
                     "contexts": []
                 },
-                "uuid": "c5a84b13-57af-4490-a856-86a8c765ff29",
+                "uuid": "94473f17-274e-4d79-9204-4ac74c826bd0",
                 "style": {
                     "plugin": "default",
                     "data": {
                         "settings": {
-                            "classes": "plebo-menu"
+                            "classes": "serundeputy-primary-navigation"
                         }
                     }
-                },
-                "conditions": [
-                    {
-                        "plugin": "path",
-                        "data": {
-                            "settings": {
-                                "visibility_setting": "1",
-                                "paths": "events/*\nevents"
-                            }
-                        }
-                    }
-                ]
+                }
             }
         },
         "default": {
