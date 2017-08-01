@@ -23,7 +23,7 @@
         ],
         "content": [
             "default",
-            "38e3fb8a-d3fa-4e7f-bf00-b673723cf5e9"
+            "baf9122e-bdd8-4e5f-a500-d8753c2096ab"
         ],
         "footer": [
             "cd4d033d-3f67-4191-8655-85ee758877c0"
@@ -116,22 +116,19 @@
                 }
             }
         },
-        "38e3fb8a-d3fa-4e7f-bf00-b673723cf5e9": {
-            "plugin": "block:1",
+        "baf9122e-bdd8-4e5f-a500-d8753c2096ab": {
+            "plugin": "serundeputy_tweets:serundeputy_tweets_block",
             "data": {
-                "module": "block",
-                "delta": "1",
+                "module": "serundeputy_tweets",
+                "delta": "serundeputy_tweets_block",
                 "settings": {
                     "title_display": "default",
                     "title": "",
                     "style": "default",
-                    "block_settings": {
-                        "delta": "1",
-                        "reusable": true
-                    },
+                    "block_settings": [],
                     "contexts": []
                 },
-                "uuid": "38e3fb8a-d3fa-4e7f-bf00-b673723cf5e9",
+                "uuid": "baf9122e-bdd8-4e5f-a500-d8753c2096ab",
                 "style": {
                     "plugin": "default",
                     "data": {
