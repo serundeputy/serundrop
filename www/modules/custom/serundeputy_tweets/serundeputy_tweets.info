@@ -1,0 +1,5 @@
+name = "Serundeputy Tweets"
+description = "Get tweets."
+type = module
+backdrop = 1.x
+version = BACKDROP_VERSION
