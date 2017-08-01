@@ -40,10 +40,10 @@
                     "title": "",
                     "style": "default",
                     "block_settings": {
-                        "menu": "user-menu",
-                        "logo": 1,
+                        "menu": "",
+                        "logo": 0,
                         "site_name": 1,
-                        "site_slogan": 1
+                        "site_slogan": 0
                     },
                     "contexts": []
                 },
