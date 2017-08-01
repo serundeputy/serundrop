@@ -2,6 +2,18 @@ serundeputy.io
 --------
 Home of @serundeputy on the web.
 
+Theming Workflow
+-----
+`Gulp` is used to compile and watch sass.
+
+* Change directories to the root of the project:
+  * `cd /path/to/serundeputy`
+* Run `npm install` to get the node dependencies and `gulp`  
+  * `npm install`
+* To compile and watch sass files type:
+  * `gulp`
+
+
 Configuration Workflow
 ----
 
