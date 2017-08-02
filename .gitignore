@@ -5,7 +5,7 @@
 settings.php
 sites/*/settings*.php
 
-# Ignore active config
+# Ignore active config.
 config/active
 
 # Ignore paths that contain user-generated content.
