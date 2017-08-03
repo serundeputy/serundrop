@@ -6,10 +6,14 @@
     li {
       margin-left: 2rem;
       margin-right: 2rem;
-      background-color: #777;
-      font-size: 0.7rem;
+      background-color: #fbfcfa;
+      // font-size: 0.7rem;
       display: inline-block;
       float: none;
+        a {
+          font-size: 0.7rem;
+          color: #262626;
+        }
     }
   }
 }
