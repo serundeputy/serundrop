@@ -9,9 +9,9 @@ Theming Workflow
 * Change directories to the root of the project:
   * `cd /path/to/serundeputy`
 * Run `npm install` to get the node dependencies and `gulp`  
-  * `npm install`
+  * `lando npm install`
 * To compile and watch sass files type:
-  * `gulp`
+  * `lando gulp`
 
 
 Configuration Workflow
@@ -22,4 +22,4 @@ Configuration Workflow
   * `lando drush bcex`
   * Add and commit to git
   * push up to github, pull down to server and then import the config
-    * `drush bcim`
+    * `lando drush bcim`
