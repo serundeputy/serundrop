@@ -17,6 +17,7 @@
     "positions": {
         "header": [
             "84c43df4-1165-4faf-8700-c362a7153c0b",
+            "448f7f0f-ad28-4791-a401-1d92fa426acf",
             "94473f17-274e-4d79-9204-4ac74c826bd0"
         ],
         "top": [],
@@ -53,6 +54,32 @@
                     "data": {
                         "settings": {
                             "classes": ""
+                        }
+                    }
+                }
+            }
+        },
+        "448f7f0f-ad28-4791-a401-1d92fa426acf": {
+            "plugin": "block:icons",
+            "data": {
+                "module": "block",
+                "delta": "icons",
+                "settings": {
+                    "title_display": "default",
+                    "title": "",
+                    "style": "default",
+                    "block_settings": {
+                        "delta": "icons",
+                        "reusable": true
+                    },
+                    "contexts": []
+                },
+                "uuid": "448f7f0f-ad28-4791-a401-1d92fa426acf",
+                "style": {
+                    "plugin": "default",
+                    "data": {
+                        "settings": {
+                            "classes": "social-icons-block"
                         }
                     }
                 }
