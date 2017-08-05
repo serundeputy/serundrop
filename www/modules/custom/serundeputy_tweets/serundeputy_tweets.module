@@ -52,17 +52,21 @@ function _serundeputy_tweets_get_tweets() {
 
   // Build up the markup from the API Request.
   $x = [];
-  $markup = "<div class='container serundeputy-tweets-container'>";
-    $markup .= "<div class='row serundeputy-tweets-row'>";
-      foreach ($statuses as $status) {
-        foreach ($status as $s) {
-          $x[] = $s;
-          if ($s->text) {
-            $markup .= "<div class='serundeputy-tweet col-md-3'>$s->text</div>";
+  $markup = "<div class='serundeputy-tweets-outside'>";
+    $markup .= "<span class='backdropintheevening'>#backdropintheevening</span>";
+    $markup .= "<div class='container serundeputy-tweets-container'>";
+      $markup .= "<div class='row serundeputy-tweets-row'>";
+        foreach ($statuses as $status) {
+          foreach ($status as $s) {
+            $x[] = $s;
+            if ($s->text) {
+              $markup .= "<div class='serundeputy-tweet col-md-3'>$s->text</div>";
+            }
           }
         }
-      }
+      $markup .= "</div>";
     $markup .= "</div>";
+    $markup .= "<span class='at-serundeputy'>@serundeputy</span>";
   $markup .= "</div>";
 
   return $markup;
