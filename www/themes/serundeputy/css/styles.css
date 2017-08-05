@@ -14,25 +14,35 @@
       border: none;
       background-color: #fbfcfa; }
 
-.serundeputy-tweets-container {
-  margin: 33px;
-  background-color: #262626;
-  color: #fbfcfa;
-  font-size: 0.66rem; }
-  .serundeputy-tweets-container .serundeputy-tweets-row {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    min-height: 77px; }
-    .serundeputy-tweets-container .serundeputy-tweets-row .col-md-3 {
-      max-width: 25%;
-      max-height: 53px;
-      padding: 13px;
-      margin-top: 6px;
-      border-right: #ccc 1px solid; }
-    .serundeputy-tweets-container .serundeputy-tweets-row .col-md-3:last-of-type {
-      border: none; }
+.serundeputy-tweets-outside {
+  background-color: #ccc;
+  margin-left: 16px;
+  margin-right: 16px;
+  min-height: 230px; }
+  .serundeputy-tweets-outside .backdropintheevening {
+    padding-left: 22px; }
+  .serundeputy-tweets-outside .at-serundeputy {
+    float: right;
+    padding-right: 22px; }
+  .serundeputy-tweets-outside .serundeputy-tweets-container {
+    margin: 12px;
+    color: #fbfcfa;
+    font-size: 0.66rem; }
+    .serundeputy-tweets-outside .serundeputy-tweets-container .serundeputy-tweets-row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      min-height: 144px;
+      background-color: #262626; }
+      .serundeputy-tweets-outside .serundeputy-tweets-container .serundeputy-tweets-row .col-md-3 {
+        max-width: 25%;
+        max-height: 133px;
+        padding: 13px;
+        margin-top: 6px;
+        border-right: #ccc 1px solid; }
+      .serundeputy-tweets-outside .serundeputy-tweets-container .serundeputy-tweets-row .col-md-3:last-of-type {
+        border: none; }
 
 .serundeputy-primary-navigation .menu-dropdown {
   width: 100%;
