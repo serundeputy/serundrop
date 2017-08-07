@@ -1,22 +1,23 @@
 .l-header {
-  background-color: #031630;
-  opacity: 0.8;
-  height: 30%;
+  background-color: #36345E;
+  height: 17em;
   .block-system-header {
     float: left;
     .header-identity-wrapper {
-      background-color: #031630;
+      background-color: #36345E;
       .header-site-name-link {
         font-family: Osaka;
         font-size: 146px;
         margin-top: 7%;
-        background-color: #031630;
+        background-color: #36345E;
       }
     }
   }
   .social-icons-block {
     float: left;
     .social-icons-outer {
+      padding-top: 4.2em;
+      padding-left: 2em;
       .backdrop-icon,
       .drupal-icon,
       .twitter-icon,
@@ -28,19 +29,22 @@
         background-color: #fbfcfa;
       }
       img.drupal-icon-img {
-        height: 50px;
-        background-color: #fbfcfa;
-        border-radius: 50%;
-        padding: 4px;
+        height: 54px;
+        padding-left: 18px;
       }
       img.twitter-icon-image {
-        height: 55px;
+        height: 64px;
+        padding-top: 2px;
       }
       img.github-icon-image {
-        height: 50px;
+        height: 55px;
         background-color: #fbfcfa;
         border-radius: 50%;
         padding: 3px;
+        margin-left: 1px;
+      }
+      .bottom-row {
+        margin-left: -14px;
       }
     }
   }
