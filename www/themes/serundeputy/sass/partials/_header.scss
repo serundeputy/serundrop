@@ -1,70 +1,98 @@
-.l-header {
-  background-color: #36345E;
-  height: 17em;
-  .block-system-header {
-    float: left;
-    .header-identity-wrapper {
-      background-color: #36345E;
-      .header-site-name-link {
-        font-family: Osaka;
-        font-size: 146px;
-        margin-top: 7%;
+// .l-header {
+//   background-color: #36345E;
+//   height: 17em;
+//   .block-system-header {
+//     float: left;
+//     .header-identity-wrapper {
+//       background-color: #36345E;
+//       .header-site-name-link {
+//         font-family: Osaka;
+//         font-size: 146px;
+//         margin-top: 7%;
+//         background-color: #36345E;
+//       }
+//     }
+//   }
+//   .social-icons-block {
+//     float: left;
+//     .social-icons-outer {
+//       padding-top: 4.2em;
+//       padding-left: 2em;
+//       .backdrop-icon,
+//       .drupal-icon,
+//       .twitter-icon,
+//       .github-icon {
+//         display: inline;
+//       }
+//       img.backdrop-icon-img {
+//         height: 50px;
+//         background-color: #fbfcfa;
+//       }
+//       img.drupal-icon-img {
+//         height: 54px;
+//         padding-left: 18px;
+//       }
+//       img.twitter-icon-image {
+//         height: 64px;
+//         padding-top: 2px;
+//       }
+//       img.github-icon-image {
+//         height: 55px;
+//         background-color: #fbfcfa;
+//         border-radius: 50%;
+//         padding: 3px;
+//         margin-left: 1px;
+//       }
+//       .bottom-row {
+//         margin-left: -14px;
+//       }
+//     }
+//   }
+
+
+/* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+@media (min-width:320px) {
+  .l-header {
+    background-color: #36345E;
+    .block-system-header {
+      //float: left;
+      .header-identity-wrapper {
         background-color: #36345E;
+        .header-site-name-link {
+          font-size: 1rem;
+          //margin-top: 7%;
+          background-color: #36345E;
+        }
       }
     }
-  }
-  .social-icons-block {
-    float: left;
-    .social-icons-outer {
-      padding-top: 4.2em;
-      padding-left: 2em;
-      .backdrop-icon,
-      .drupal-icon,
-      .twitter-icon,
-      .github-icon {
-        display: inline;
-      }
-      img.backdrop-icon-img {
-        height: 50px;
-        background-color: #fbfcfa;
-      }
-      img.drupal-icon-img {
-        height: 54px;
-        padding-left: 18px;
-      }
-      img.twitter-icon-image {
-        height: 64px;
-        padding-top: 2px;
-      }
-      img.github-icon-image {
-        height: 55px;
-        background-color: #fbfcfa;
-        border-radius: 50%;
-        padding: 3px;
-        margin-left: 1px;
-      }
-      .bottom-row {
-        margin-left: -14px;
-      }
-    }
-  }
-
-  /* 34em comes into play at 543px */
-  @media (min-width: 25em) {
-
-  }
-
-  /* 34em comes into play at 767px */
-  @media (min-width: 34em) {
-
-  }
-
-  /* 48em comes into play at 991px */
-  @media (min-width: 48em) {
-
-  }
-
-  @media (min-width: 62em) {
-
   }
 }
+/* smartphones, Android phones, landscape iPhone */
+@media (min-width:480px) {
+  .l-header {
+    background-color: red;
+  }
+}
+@media (min-width:600px) { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+//   /* 34em comes into play at 543px */
+//   @media (min-width: 25em) {
+//
+//   }
+//
+//   /* 34em comes into play at 767px */
+//   @media (min-width: 34em) {
+//
+//   }
+//
+//   /* 48em comes into play at 991px */
+//   @media (min-width: 48em) {
+//
+//   }
+//
+//   @media (min-width: 62em) {
+//
+//   }
+// }
