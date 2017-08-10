@@ -58,7 +58,27 @@
   @media (min-width:375px) {
     padding-left: 122px;
   }
-  @media (min-width:600px) {
+  // @media (min-width:600px) {
+  //   padding-left: 0px;
+  //   padding-top: 46px;
+  //   .menu-dropdown {
+  //     li {
+  //       margin-left: 1.2rem;
+  //       margin-right: 0rem;
+  //     }
+  //   }
+  // }
+  @media (min-width:667px) {
+    padding-left: 17px;
+    padding-top: 18px;
+    .menu-dropdown {
+      li {
+        margin-left: 1.2rem;
+        margin-right: 0rem;
+      }
+    }
+  }
+  @media (min-width:768px) {
     padding-left: 0px;
     padding-top: 46px;
     .menu-dropdown {
