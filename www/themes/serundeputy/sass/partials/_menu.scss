@@ -1,6 +1,7 @@
 .serundeputy-primary-navigation {
   @media (min-width:320px) {
     padding-left: 100px;
+    clear: both;
     .menu-toggle-button-icon,
     .menu-toggle-button-icon:before,
     .menu-toggle-button-icon:after {
@@ -51,6 +52,19 @@
       .menu-dropdown ul a:active,
       .menu-dropdown ul a.highlighted {
         background: #a893c4;
+      }
+    }
+  }
+  @media (min-width:375px) {
+    padding-left: 122px;
+  }
+  @media (min-width:600px) {
+    padding-left: 0px;
+    padding-top: 46px;
+    .menu-dropdown {
+      li {
+        margin-left: 1.2rem;
+        margin-right: 0rem;
       }
     }
   }
