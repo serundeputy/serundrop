@@ -1,6 +1,6 @@
 .serundeputy-primary-navigation {
   @media (min-width:320px) {
-    padding-left: 96px;
+    padding-left: 100px;
     .menu-toggle-button-icon,
     .menu-toggle-button-icon:before,
     .menu-toggle-button-icon:after {
@@ -13,7 +13,7 @@
       width: 100%;
       display: table;
       ul {
-        background: none;
+        background: #fbfcfa;
         li a {
           padding-left: 0em;
         }
@@ -33,8 +33,24 @@
               border-left: none;
               border-right: none;
               border-bottom: none;
+              height: 3rem;
             }
           }
+      }
+      li:hover {
+        background-color: #a893c4;
+        a:active {
+          background: #a893c4;
+        }
+      }
+      li.has-children > a:hover, .js .menu-dropdown > li.has-children > a:focus {
+        background-color: #a893c4;
+      }
+      ul a:hover,
+      .menu-dropdown ul a:focus,
+      .menu-dropdown ul a:active,
+      .menu-dropdown ul a.highlighted {
+        background: #a893c4;
       }
     }
   }
