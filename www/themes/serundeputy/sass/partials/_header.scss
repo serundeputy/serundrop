@@ -137,6 +137,39 @@
         }
         .bottom-row img.github-icon-image {
           height: 52px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+  @media (min-width: 1366px) {
+    height: 16em;
+    .block-system-header {
+      .header-identity-wrapper {
+        .header-site-name-link {
+          font-size: 128px;
+          padding-left: 0.3em;
+        }
+      }
+    }
+    .social-icons-block {
+      padding-left: 0px;
+      padding-top: 88px;
+      margin-left: -22px;
+      .social-icons-outer {
+        .top-row img.backdrop-icon-img {
+          height: 52px;
+        }
+        .top-row img.drupal-icon-img {
+          height: 54px;
+        }
+        .bottom-row img.twitter-icon-image {
+          height: 64px;
+          padding-top: 0px;
+        }
+        .bottom-row img.github-icon-image {
+          height: 55px;
+          margin-bottom: 4px;
         }
       }
     }

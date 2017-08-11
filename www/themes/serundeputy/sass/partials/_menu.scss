@@ -86,6 +86,16 @@
       }
     }
   }
+  @media (min-width: 1366px) {
+    padding-top: 3.7em;
+    .menu-dropdown {
+      li {
+        margin-left: 5rem;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
   // .menu-dropdown {
   //   width: 100%;
   //   display: table;
