@@ -174,6 +174,38 @@
       }
     }
   }
+  @media (min-width: 1877px) {
+    height: 18.5em;
+    .block-system-header {
+      .header-identity-wrapper {
+        .header-site-name-link {
+          font-size: 155px;
+          padding-left: 0.8em;
+        }
+      }
+    }
+    .social-icons-block {
+      padding-left: 0px;
+      padding-top: 104px;
+      margin-left: 19px;
+      .social-icons-outer {
+        .top-row img.backdrop-icon-img {
+          height: 82px;
+        }
+        .top-row img.drupal-icon-img {
+          height: 84px;
+        }
+        .bottom-row img.twitter-icon-image {
+          height: 94px;
+          padding-top: 0px;
+        }
+        .bottom-row img.github-icon-image {
+          height: 85px;
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
 
     // .l-header {
     //   height: 5em;
