@@ -113,6 +113,34 @@
       margin-left: -22px;
     }
   }
+  @media (min-width:1024px) {
+    height: 13em;
+    .block-system-header {
+      .header-identity-wrapper {
+        .header-site-name-link {
+          font-size: 85px;
+          padding-left: 0.5em;
+        }
+      }
+    }
+    .social-icons-block {
+      padding-top: 62px;
+      .social-icons-outer {
+        .top-row img.backdrop-icon-img {
+          height: 52px;
+        }
+        .top-row img.drupal-icon-img {
+          height: 54px;
+        }
+        .bottom-row img.twitter-icon-image {
+          height: 59px;
+        }
+        .bottom-row img.github-icon-image {
+          height: 52px;
+        }
+      }
+    }
+  }
 
     // .l-header {
     //   height: 5em;
