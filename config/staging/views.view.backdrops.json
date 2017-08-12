@@ -32,7 +32,7 @@
                         "offset": "0"
                     }
                 },
-                "style_plugin": "grid",
+                "style_plugin": "default",
                 "row_plugin": "node",
                 "fields": {
                     "title": {
@@ -260,15 +260,10 @@
                 "use_more_always": false,
                 "use_more_text": "See More Posts",
                 "style_options": {
-                    "row_class": "",
+                    "row_class": "hp-row",
                     "default_row_class": 1,
-                    "row_class_special": 1,
-                    "uses_fields": 0,
-                    "columns": "2",
-                    "alignment": "horizontal",
-                    "fill_single_line": 1,
-                    "caption": "",
-                    "summary": ""
+                    "row_class_special": 0,
+                    "uses_fields": 0
                 }
             }
         },
