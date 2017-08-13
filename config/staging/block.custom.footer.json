@@ -4,7 +4,7 @@
     "info": "footer",
     "title": "",
     "body": {
-        "value": "<div class=\"serundeputy-footer\">\r\n  <span class=\"duck-in-a-box\"><img src=\"/files/duck_in_a_box.png\" /></span><span class=\"serundeputy-credits\">\r\n    Made with Backdrop <br />\r\n    Built by @serundeputy and @saintlynn <br />\r\n    Designed by @saintlynn\r\n  </span>\r\n</div>",
+        "value": "<div class=\"serundeputy-footer\">\r\n  <span class=\"duck-in-a-box\"><img src=\"/files/header-icons/duck_in_a_box.png\" /></span><span class=\"serundeputy-credits\">\r\n    Made with Backdrop <br />\r\n    Built by @serundeputy and @saintlynn <br />\r\n    Designed by @saintlynn\r\n  </span>\r\n</div>",
         "format": "full_html"
     },
     "description": "A reusable custom block."
