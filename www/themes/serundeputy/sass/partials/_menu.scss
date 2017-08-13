@@ -39,19 +39,19 @@
           }
       }
       li:hover {
-        background-color: #8683af;
+        background-color: #c9cad9;
         a:active {
-          background: #8683af;
+          background: #c9cad9;
         }
       }
       li.has-children > a:hover, .js .menu-dropdown > li.has-children > a:focus {
-        background-color: #8683af;
+        background-color: #c9cad9;
       }
       ul a:hover,
       .menu-dropdown ul a:focus,
       .menu-dropdown ul a:active,
       .menu-dropdown ul a.highlighted {
-        background: #8683af;
+        background: #c9cad9;
       }
     }
   }

@@ -4,10 +4,10 @@
 @import 'partials/footer';
 
 body {
-  background-color: #afb4b0;
+  // background-color: #afb4b0;
+  background-color: #232020;
   font-family: Osaka;
-  .l-content {
-    margin-left: 27px;
-    margin-right: 27px;
+  a {
+    color: #3c82a3;
   }
 }
