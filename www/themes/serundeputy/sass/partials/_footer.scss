@@ -1,3 +1,28 @@
 .l-footer {
-  background-color: #36345E;
+  @media (min-width:320px) {
+    background-color: #36345E;
+    color: #fff;
+    font-size: 0.77em;
+  }
+  @media (min-width:375px) {
+  }
+  @media (min-width:667px) {
+  }
+  @media (min-width:768px) {
+    display: table;
+    .serundeputy-footer {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .duck-in-a-box,
+    .serundeputy-credits {
+      float: left;
+    }
+  }
+  @media (min-width:1024px) {
+  }
+  @media (min-width: 1366px) {
+  }
+  @media (min-width: 1877px) {
+  }
 }
