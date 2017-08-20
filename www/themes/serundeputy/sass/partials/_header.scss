@@ -68,22 +68,6 @@
       padding-left: 36px;
     }
   }
-  // @media (min-width:600px) {
-  //   height: 11em;
-  //   .block-system-header {
-  //     .header-identity-wrapper {
-  //       .header-site-name-link {
-  //         font-size: 60px;
-  //         padding-left: 0.5em;
-  //       }
-  //     }
-  //   }
-  //   .social-icons-block {
-  //     padding-left: 0px;
-  //     padding-top: 47px;
-  //     margin-left: -22px;
-  //   }
-  // }
   @media (min-width:667px) {
     height: 11em;
     .block-system-header {
@@ -209,68 +193,4 @@
       }
     }
   }
-
-    // .l-header {
-    //   height: 5em;
-    //   .block-system-header {
-    //     // float: left;
-    //     .header-identity-wrapper {
-    //       // background-color: #36345E;
-    //       .header-site-name-link {
-    //         font-size: 146px;
-    //         margin-top: 7%;
-    //         // background-color: #36345E;
-    //       }
-    //     }
-    //   }
-    // }
-
-  // background-color: #36345E;
-  // height: 17em;
-  // .block-system-header {
-  //   float: left;
-  //   .header-identity-wrapper {
-  //     background-color: #36345E;
-  //     .header-site-name-link {
-  //       font-size: 146px;
-  //       margin-top: 7%;
-  //       background-color: #36345E;
-  //     }
-  //   }
-  // }
-  // .social-icons-block {
-  //   float: left;
-  //   .social-icons-outer {
-  //     padding-top: 4.2em;
-  //     padding-left: 2em;
-  //     .backdrop-icon,
-  //     .drupal-icon,
-  //     .twitter-icon,
-  //     .github-icon {
-  //       display: inline;
-  //     }
-  //     img.backdrop-icon-img {
-  //       height: 50px;
-  //       background-color: #fbfcfa;
-  //     }
-  //     img.drupal-icon-img {
-  //       height: 54px;
-  //       padding-left: 18px;
-  //     }
-  //     img.twitter-icon-image {
-  //       height: 64px;
-  //       padding-top: 2px;
-  //     }
-  //     img.github-icon-image {
-  //       height: 55px;
-  //       background-color: #fbfcfa;
-  //       border-radius: 50%;
-  //       padding: 3px;
-  //       margin-left: 1px;
-  //     }
-  //     .bottom-row {
-  //       margin-left: -14px;
-  //     }
-  //   }
-  // }
 }

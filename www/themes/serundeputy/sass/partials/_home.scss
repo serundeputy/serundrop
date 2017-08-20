@@ -51,7 +51,44 @@
   @media (min-width:1024px) {
   }
   @media (min-width: 1366px) {
+    .l-content {
+      margin-top: 0.3em;
+      .view-backdrops {
+        margin-left: 3.6em;
+        .views-row {
+          width: 47%;
+          display: inline-block;
+          min-height: 657px;
+          vertical-align: top;
+          margin-bottom: 1em;
+          .view-mode-teaser {
+            margin-top: 0.8rem;
+          }
+        }
+        .views-row-2,
+        .views-row-4 {
+          margin-left: 1em;
+        }
+      }
+      .serundeputy-tweets-outside {
+        .serundeputy-tweet {
+          font-size: 13.8px;
+        }
+      }
+    }
   }
-  @media (min-width: 1877px) {
+  @media (min-width: 1800px) {
+    .l-content {
+      .view-backdrops {
+        .views-row {
+          min-height: 516px;
+        }
+      }
+      .serundeputy-tweets-outside {
+        .serundeputy-tweet {
+          font-size: 15px;
+        }
+      }
+    }
   }
 }
