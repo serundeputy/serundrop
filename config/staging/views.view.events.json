@@ -127,7 +127,7 @@
                         "order": "DESC"
                     }
                 },
-                "title": "Upcoming Events",
+                "title": "{ Upcoming Events }",
                 "row_options": {
                     "build_mode": "teaser",
                     "links": false,
@@ -378,7 +378,7 @@
                     "context_only_inline": 0
                 },
                 "path": "events/past",
-                "title": "Past Events",
+                "title": "{ Past Events }",
                 "display_description": "",
                 "tab_options": {
                     "type": "none",

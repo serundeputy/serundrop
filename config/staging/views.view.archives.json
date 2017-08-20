@@ -137,7 +137,7 @@
                         "order": "DESC"
                     }
                 },
-                "title": "Archive",
+                "title": "{ Archive }",
                 "row_options": {
                     "build_mode": "teaser",
                     "links": true,
