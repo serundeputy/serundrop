@@ -1,7 +1,8 @@
-/*Provides white background under content on About, Contributions, and Writings pages*/
+/*Provides white background under content on About, Contributions, Writings pages, Blog posts, and individual Events*/
 .about,
-.contributions,
-.writings {
+.node-type-page,
+.node-type-event
+ {
   @media (min-width:320px) {
     .layout {
       .l-container {
