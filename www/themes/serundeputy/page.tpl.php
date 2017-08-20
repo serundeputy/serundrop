@@ -38,6 +38,11 @@
  *
  * @ingroup themeable
  */
+
+ // Get the path alias and add to the $classes array so we can set a body class
+ // per page.
+ $path_to_body_class = backdrop_get_path_alias();
+ $classes[] = $path_to_body_class;
 ?><!DOCTYPE html>
 <html<?php print backdrop_attributes($html_attributes); ?>>
   <head>
