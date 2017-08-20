@@ -1,0 +1,14 @@
+.view-name-archives {
+  @media (min-width:320px) {
+    .l-content {
+      .views-row {
+        background: #fbfcfa;
+        padding-left: 20px;
+        padding-right: 20px;
+        h2 {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}

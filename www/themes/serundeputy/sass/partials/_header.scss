@@ -1,18 +1,24 @@
 .l-header {
   @media (min-width:320px) {
-    background-color: #36345E;
+    background-color: #36345e;
     height: 12em;
     a {
+      color: #fbfcfa;
+    }
+    a:active {
+      background: #36345e;
+    }
+    a:hover {
       color: #fbfcfa;
     }
     .block-system-header {
       float: left;
       .header-identity-wrapper {
-        background-color: #36345E;
+        background-color: #36345e;
         .header-site-name-link {
           font-size: 37px;
           margin-top: 7%;
-          background-color: #36345E;
+          background-color: #36345e;
         }
       }
     }
