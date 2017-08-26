@@ -36,3 +36,4 @@ modules/contrib/codefilter/
 # Ignore devel #
 ################
 www/modules/contrib/devel
+/config/staging/devel.settings.json
