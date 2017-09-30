@@ -70,7 +70,7 @@
     }
   }
   @media (min-width:768px) {
-    padding-left: 6em;
+    padding-left: 8em;
     padding-top: 37px;
     .menu-dropdown {
       width: 100%;
@@ -91,8 +91,8 @@
     }
   }
   @media (min-width: 1024px) {
-    padding-top: 57px;
-    padding-left: 8.5em;
+    padding-top: 55px;
+    padding-left: 12.5em;
     .menu-dropdown {
       margin-left: 0em;
       li {
@@ -101,8 +101,8 @@
     }
   }
   @media (min-width: 1366px) {
-    padding-top: 4.1em;
-    padding-left: 16.5em;
+    padding-top: 4em;
+    padding-left: 20.5em;
     .menu-dropdown {
       li {
         margin-left: 5px;
@@ -118,6 +118,6 @@
   }
   @media (min-width: 1877px) {
     padding-top: 4.4em;
-    padding-left: 31em;
+    padding-left: 38em;
   }
 }
