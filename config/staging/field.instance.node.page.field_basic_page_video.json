@@ -36,6 +36,12 @@
                 "description_position": "bottom"
             },
             "module": "video_embed_field"
+        },
+        "teaser": {
+            "label": "above",
+            "type": "hidden",
+            "weight": "0",
+            "settings": []
         }
     }
 }

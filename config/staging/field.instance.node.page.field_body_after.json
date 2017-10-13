@@ -29,6 +29,12 @@
             "weight": "2",
             "settings": [],
             "module": "text"
+        },
+        "teaser": {
+            "label": "above",
+            "type": "hidden",
+            "weight": "0",
+            "settings": []
         }
     }
 }
