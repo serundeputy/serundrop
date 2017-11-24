@@ -32,23 +32,31 @@
         .bottom-row {
           float: left;
           .backdrop-icon,
+          .laravel-icon,
           .drupal-icon,
+          .nodejs-icon,
           .twitter-icon,
           .github-icon {
             display: inline;
+            font-size: 44px;
+            color: #fff;
           }
           img.backdrop-icon-img {
             height: 35px;
             background-color: #fbfcfa;
           }
+          .devicon-laravel-plain {
+            font-size: 39px;
+          }
           img.drupal-icon-img {
             height: 47px;
             padding-left: 14px;
           }
-          img.twitter-icon-image {
-            height: 53px;
-            padding-top: 2px;
-            padding-left: 4px;
+          .devicon-nodejs-plain {
+            padding-left: 9px;
+          }
+          .devicon-twitter-plain {
+            font-size: 38px;
           }
           img.github-icon-image {
             height: 47px;
@@ -119,7 +127,7 @@
       padding-top: 62px;
       .social-icons-outer {
         .top-row img.backdrop-icon-img {
-          height: 52px;
+          height: 42px;
         }
         .top-row img.drupal-icon-img {
           height: 54px;
@@ -150,7 +158,7 @@
       margin-left: -22px;
       .social-icons-outer {
         .top-row img.backdrop-icon-img {
-          height: 52px;
+          height: 42px;
         }
         .top-row img.drupal-icon-img {
           height: 54px;
