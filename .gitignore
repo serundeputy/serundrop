@@ -3,6 +3,7 @@
 
 # Ignore configuration files that may contain sensitive information.
 settings.php
+settings.local.php
 sites/*/settings*.php
 
 # Ignore active config.
@@ -24,6 +25,7 @@ vendor
 # Ignore stuff that shouldn't
 *.sql
 *.gz
+*.tgz
 *.DS_Store
 
 # Ignore PHPStorm stuff.
