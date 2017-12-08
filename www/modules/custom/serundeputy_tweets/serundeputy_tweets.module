@@ -47,7 +47,7 @@ function _serundeputy_tweets_get_tweets() {
 
   $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
   $statuses = $connection->get(
-    "search/tweets", ["q" => "#backdropintheevening", "count" => 4]
+    "statuses/user_timeline", ["screen_name" => "serundeputy", "count" => 4]
   );
 
   // Build up the markup from the API Request.
