@@ -1,0 +1,10 @@
+{
+    "_config_name": "block.custom.net_nuetrality_break_the_internet",
+    "delta": "net_nuetrality_break_the_internet",
+    "info": "net nuetrality; #break the internet",
+    "title": "",
+    "body": {
+        "value": "<script src=\"https://widget.battleforthenet.com/widget.js\" async></script>",
+        "format": "full_html"
+    }
+}
