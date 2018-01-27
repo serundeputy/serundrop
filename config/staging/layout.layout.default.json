@@ -18,7 +18,6 @@
         "header": [
             "84c43df4-1165-4faf-8700-c362a7153c0b",
             "448f7f0f-ad28-4791-a401-1d92fa426acf",
-            "a4bbfaaa-6b16-40d6-9c02-2bca6fb4b1f4",
             "94473f17-274e-4d79-9204-4ac74c826bd0"
         ],
         "top": [],
@@ -81,28 +80,6 @@
                     "data": {
                         "settings": {
                             "classes": "social-icons-block"
-                        }
-                    }
-                }
-            }
-        },
-        "a4bbfaaa-6b16-40d6-9c02-2bca6fb4b1f4": {
-            "plugin": "block:net_nuetrality_break_the_internet",
-            "data": {
-                "module": "block",
-                "delta": "net_nuetrality_break_the_internet",
-                "settings": {
-                    "title_display": "default",
-                    "style": "default",
-                    "block_settings": [],
-                    "contexts": []
-                },
-                "uuid": "a4bbfaaa-6b16-40d6-9c02-2bca6fb4b1f4",
-                "style": {
-                    "plugin": "default",
-                    "data": {
-                        "settings": {
-                            "classes": ""
                         }
                     }
                 }
