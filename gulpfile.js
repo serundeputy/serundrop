@@ -7,7 +7,7 @@
 'use strict';
 
 var gulp = require('gulp');
-// var browserSync = require('browser-sync');
+var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var shell = require('gulp-shell');
@@ -55,17 +55,17 @@ gulp.task('clearcache', shell.task([
  * Clear cache when Drupal related files are changed
  */
 gulp.task('watch', function () {
-  // browserSync.init({
-  //   // This needs to be replaced with your local site's proxy
-  //   proxy: 'flat/gulp-and-drupal'
-  // });
+  browserSync.init({
+    // This needs to be replaced with your local site's proxy
+    proxy: 'https://serundeputy.lndo.site',
+  });
   gulp.watch([config.theme_path + '/sass/*.scss', config.theme_path + '/sass/**/*.scss'], ['sass', function (done) {
     // Comment out this line to prevent the whole browser from reloading
-    // browserSync.reload();
+    browserSync.reload();
   }]);
   gulp.watch('**/*.{php,inc,info}', ['clearcache', function (done) {
     // Comment out this line to prevent the whole browser from reloading
-    // browserSync.reload();
+    browserSync.reload();
   }]);
 });
 
