@@ -31,6 +31,7 @@ vendor
 # Ignore PHPStorm stuff.
 .idea
 *.idea/*
+.*.swp
 
 # Ignoring these modules while they are less than stable.
 modules/contrib/codefilter/
