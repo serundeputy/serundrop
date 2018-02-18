@@ -18,7 +18,7 @@ Configuration Workflow
 ----
 
 * Make config changes in the Backdrop UI on your local dev environment.
-* Once complete export the configuration:
+* Once complete export the configuration (make sure you are in `www`):
   * `lando drush bcex`
   * Add and commit to git
   * push up to github, pull down to server and then import the config
