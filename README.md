@@ -1,9 +1,11 @@
 serundeputy.io
 --------
+
 Home of @serundeputy on the web.
 
 Theming Workflow
 -----
+
 `Gulp` is used to compile and watch sass.
 
 * Change directories to the root of the project:
@@ -23,3 +25,13 @@ Configuration Workflow
   * Add and commit to git
   * push up to github, pull down to server and then import the config
     * `lando drush bcim`
+
+Deploy
+---
+
+To deploy:
+* From the root of the project run:
+
+```bash
+lando envoy run deploy --branch=master
+```
