@@ -11,7 +11,7 @@
     git pull origin {{ $branch }}
   @endif
   composer install
-  cd /var/www/serundepyty/www
+  cd /var/www/serundeputy/www
   drush updb -y
   drush bcim -y
   drush cc all
