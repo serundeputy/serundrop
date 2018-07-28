@@ -10,6 +10,7 @@
   @if ($branch)
     git pull origin {{ $branch }}
   @endif
+  composer install
   drush updb -y
   drush bcim -y
   drush cc all
