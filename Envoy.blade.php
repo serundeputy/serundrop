@@ -6,10 +6,10 @@
 @endtask
 
 @task('deploy', ['on' => 'web'])
+  cd /var/www/serundeputy
   @if ($branch)
     git pull origin {{ $branch }}
   @endif
-  cd /var/www/serundeputy
   composer install
   cd /var/www/serundepyty/www
   drush updb -y
