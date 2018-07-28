@@ -1,0 +1,9 @@
+# Configuration file for running the test suite. Results typically at http://travis-ci.org/backdrop/backdrop
+# whitelist
+language: php
+php:
+  - 7.0 
+before_script:
+  - composer install
+script: composer test
+
