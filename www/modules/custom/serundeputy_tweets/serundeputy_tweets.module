@@ -1,4 +1,9 @@
 <?php
+/**
+ * @file
+ * Aggregeate tweets from @serundeputy for display on serundeputy.io.
+ */
+
 require_once BACKDROP_ROOT . "/../vendor/autoload.php";
 
 use Abraham\TwitterOAuth\TwitterOAuth;
@@ -18,7 +23,7 @@ function serundeputy_tweets_block_info() {
 /**
  * Implements hook_block_view().
  *
- * @see _serundeputy_tweets_get_tweets().
+ * @see _serundeputy_tweets_get_tweets()
  */
 function serundeputy_tweets_block_view($delta = '', $settings = array()) {
   $block = array();
@@ -38,7 +43,9 @@ function serundeputy_tweets_block_view($delta = '', $settings = array()) {
  * Get tweets.
  */
 function _serundeputy_tweets_get_tweets() {
+  // @codingStandardsIgnoreStart
   global $settings;
+  // @codingStandardsIgnoreEnd
 
   $consumer_key = $settings['consumer_key'];
   $consumer_secret = $settings['consumer_secret'];
@@ -53,23 +60,23 @@ function _serundeputy_tweets_get_tweets() {
   // Build up the markup from the API Request.
   $x = [];
   $markup = "<div class='serundeputy-tweets-outside'>";
-    $markup .= "<span class='backdropintheevening'>#backdropintheevening</span>";
-    $markup .= "<div class='container-fluid serundeputy-tweets-container'>";
-      $markup .= "<div class='row-fluid serundeputy-tweets-row'>";
-        foreach ($statuses as $status) {
-          foreach ($status as $s) {
-            $x[] = $s;
-            if ($s->text) {
-              $markup .= "
-                <div class='serundeputy-tweet col-md-3'>
-                  $s->text
-                </div>";
-            }
-          }
-        }
-      $markup .= "</div>";
-    $markup .= "</div>";
-    $markup .= "<span class='at-serundeputy'>@serundeputy</span>";
+  $markup .= "<span class='backdropintheevening'>#backdropintheevening</span>";
+  $markup .= "<div class='container-fluid serundeputy-tweets-container'>";
+  $markup .= "<div class='row-fluid serundeputy-tweets-row'>";
+  foreach ($statuses as $status) {
+    foreach ($status as $s) {
+      $x[] = $s;
+      if ($s->text) {
+        $markup .= "
+          <div class='serundeputy-tweet col-md-3'>
+            $s->text
+          </div>";
+      }
+    }
+  }
+  $markup .= "</div>";
+  $markup .= "</div>";
+  $markup .= "<span class='at-serundeputy'>@serundeputy</span>";
   $markup .= "</div>";
 
   return $markup;
