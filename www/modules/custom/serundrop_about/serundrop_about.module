@@ -1,6 +1,11 @@
 <?php
 /**
- * Implements hook_menu()
+ * @file
+ * Demonstrate modular ability of Backdrop CMS.
+ */
+
+/**
+ * Implements hook_menu().
  */
 function serundrop_about_menu() {
   $items = array();
@@ -15,7 +20,7 @@ function serundrop_about_menu() {
 }
 
 /**
- * Page callback for serundrop_about
+ * Page callback for serundrop_about.
  */
 function serundrop_about_page() {
   $html = <<<HTML
@@ -46,4 +51,3 @@ function serundrop_about_page() {
 HTML;
   return $html;
 }
-
