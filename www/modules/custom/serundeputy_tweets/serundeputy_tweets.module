@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Aggregeate tweets from @serundeputy for display on serundeputy.io.
+ * Aggregeate tweets from @serundeputy for display on serundeputy.io. 
  */
 
 require_once BACKDROP_ROOT . "/../vendor/autoload.php";
