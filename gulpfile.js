@@ -85,8 +85,8 @@ gulp.task('check:phpcs', function () {
   return gulp.src(config.phpCheck)
     .pipe(phpcs({
       // these paths are assuming that composer files are in the backdrop root.
-      bin: 'vendor/bin/phpcs',
-      standard: 'vendor/drupal/coder/coder_sniffer/Drupal'
+      bin: './vendor/bin/phpcs',
+      standard: 'vendor/backdrop/coder/coder_sniffer/Backdrop'
     }))
     .pipe(phpcs.reporter('log'))
     .pipe(phpcs.reporter('fail'));
