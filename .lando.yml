@@ -15,7 +15,7 @@ config:
 
 services:
   appserver:
-    build:
+    run:
       - cd $LANDO_MOUNT && composer install
       - composer global require laravel/envoy
   node-cli:
