@@ -28,7 +28,8 @@
         "node_submitted": true,
         "node_user_picture": true,
         "node_permissions": true,
-        "language": 0
+        "language": 0,
+        "hidden_path": "0"
     },
     "base": "node_content",
     "module": "node",

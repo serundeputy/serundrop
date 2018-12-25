@@ -1,0 +1,22 @@
+{
+    "_config_name": "headless.settings",
+    "node": {
+        "article": 1,
+        "event": 1,
+        "page": 1,
+        "junk": 0,
+        "vid_with_desc": 0
+    },
+    "vocabularies": {
+        "tags": 0
+    },
+    "views": {
+        "archives": 1,
+        "backdrops": 1,
+        "events": 1,
+        "file_admin": 0,
+        "image_library": 0,
+        "node_admin_content": 0,
+        "user_admin": 0
+    }
+}

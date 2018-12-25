@@ -36,7 +36,8 @@
         "node_submitted": 1,
         "node_user_picture": 1,
         "language": 0,
-        "node_permissions": true
+        "node_permissions": true,
+        "hidden_path": "0"
     },
     "orig_type": "event"
 }
