@@ -7,7 +7,7 @@
 /**
  * The current system version.
  */
-define('BACKDROP_VERSION', '1.10.1');
+define('BACKDROP_VERSION', '1.11.3');
 
 /**
  * Core API compatibility.
@@ -253,6 +253,22 @@ define('PASS_THROUGH', -1);
  * @see http://php.net/manual/language.functions.php
  */
 define('BACKDROP_PHP_FUNCTION_PATTERN', '[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*');
+
+/**
+ * An RFC7231 Compliant date.
+ *
+ * http://tools.ietf.org/html/rfc7231#section-7.1.1.1
+ *
+ * Example: Sun, 06 Nov 1994 08:49:37 GMT
+ *
+ * This constant was introduced in PHP 7.0.19 and PHP 7.1.5 but needs to be
+ * defined by Backdrop for earlier PHP versions.
+ *
+ * @since 1.11.0
+ */
+if (!defined('DATE_RFC7231')) {
+  define('DATE_RFC7231', 'D, d M Y H:i:s \G\M\T');
+}
 
 // Exit early if running an incompatible PHP version to avoid fatal errors.
 if (version_compare(PHP_VERSION, BACKDROP_MINIMUM_PHP) < 0) {
@@ -983,8 +999,16 @@ function backdrop_get_filename($type, $name, $filename = NULL) {
 
   // Profiles are a special case: they have a fixed location and naming.
   if ($type == 'profile') {
-    $profile_filename = "profiles/$name/$name.profile";
-    $files[$type][$name] = file_exists($profile_filename) ? $profile_filename : FALSE;
+    $profile_filenames = array("profiles/$name/$name.profile", "core/profiles/$name/$name.profile");
+    foreach ($profile_filenames as $profile_filename) {
+      if (file_exists($profile_filename)) {
+        $files[$type][$name] = $profile_filename;
+        break;
+      }
+      else {
+        $files[$type][$name] = FALSE;
+      }
+    }
   }
   if (!isset($files[$type])) {
     $files[$type] = array();
@@ -2196,7 +2220,17 @@ function watchdog_severity_enabled($severity = WATCHDOG_NOTICE) {
   // This may be called before system.core, such as when running update.php or
   // the initial installation. As such we provide the defaults if needed.
   if (!isset($enabled_severity_levels)) {
-    $enabled_severity_levels = array(0, 1, 2, 3, 4, 5, 6);
+    $enabled_severity_levels = array(
+      WATCHDOG_EMERGENCY,
+      WATCHDOG_ALERT,
+      WATCHDOG_CRITICAL,
+      WATCHDOG_ERROR,
+      WATCHDOG_WARNING,
+      WATCHDOG_NOTICE,
+      WATCHDOG_INFO,
+      // WATCHDOG_DEBUG,
+      // WATCHDOG_DEPRECATED,
+    );
   }
 
   // Return TRUE if the severity level is enabled.
@@ -2314,6 +2348,8 @@ function watchdog($type, $message, $variables = array(), $severity = WATCHDOG_NO
  *
  * @see backdrop_get_messages()
  * @see theme_status_messages()
+ *
+ * @since 1.11.0 Added "info" as an acceptable $type parameter.
  */
 function backdrop_set_message($message = NULL, $type = 'status', $repeat = TRUE) {
   if ($message || $message === '0' || $message === 0) {
@@ -2343,6 +2379,7 @@ function backdrop_set_message($message = NULL, $type = 'status', $repeat = TRUE)
  *   - 'status'
  *   - 'warning'
  *   - 'error'
+ *   - 'info'
  * @param bool $clear_queue
  *   (optional) If this is TRUE, the queue will be cleared of messages of the
  *   type specified in the $type parameter. Otherwise the queue will be left
@@ -2472,10 +2509,9 @@ function backdrop_base64_encode($string) {
 /**
  * Returns a string of highly randomized bytes (over the full 8-bit range).
  *
- * This function is better than simply calling mt_rand() or any other built-in
- * PHP function because it can return a long string of bytes (compared to < 4
- * bytes normally from mt_rand()) and uses the best available pseudo-random
- * source.
+ * This function is better than calling mt_rand() or any other built-in PHP
+ * function because it can return a long string of bytes (compared to < 4 bytes
+ * normally from mt_rand()), and uses the best available pseudo-random source.
  *
  * @param $count
  *   The number of characters (bytes) to return in the string.
@@ -2902,8 +2938,15 @@ function _backdrop_exception_handler($exception) {
     _backdrop_log_error(_backdrop_decode_exception($exception), TRUE);
   }
   catch (Exception $exception2) {
-    // Another uncaught exception was thrown while handling the first one.
-    // If we are displaying errors, then do so with no possibility of a further uncaught exception being thrown.
+    // Default the status code to 500 before any other code is run. This will
+    // make any FATAL errors return 500 responses instead of 200, and also
+    // account for cases where an exception was thrown before the 500 status
+    // could be set (e.g. while loading a maintenance theme from cache).
+    drupal_add_http_header('Status', '500 Internal Server Error');
+
+    // Another uncaught exception was thrown while handling the first one. If we
+    // are displaying errors, then do so with no possibility of a further
+    // uncaught exception being thrown.
     if (error_displayable()) {
       print '<h1>Additional uncaught exception thrown while handling exception.</h1>';
       print '<h2>Original</h2><p>' . _backdrop_render_exception_safe($exception) . '</p>';
@@ -3258,9 +3301,9 @@ function backdrop_valid_test_ua() {
   if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match("/^(simpletest\d+);(.+);(.+);(.+)$/", $_SERVER['HTTP_USER_AGENT'], $matches)) {
     list(, $prefix, $time, $salt, $hmac) = $matches;
     $check_string =  $prefix . ';' . $time . ';' . $salt;
-    // We use the salt from settings.php to make the HMAC key, since
-    // the database is not yet initialized and we can't access any Backdrop variables.
-    // The file properties add more entropy not easily accessible to others.
+    // We use the salt from settings.php to make the HMAC key, since the
+    // database is not yet initialized and we can't access any Backdrop
+    // variables. The file properties add more entropy.
     $key = settings_get('hash_salt') . filectime(__FILE__) . fileinode(__FILE__);
     $time_diff = REQUEST_TIME - $time;
     // Since we are making a local request a 5 second time window is allowed,
@@ -3282,9 +3325,9 @@ function backdrop_generate_test_ua($prefix) {
   static $key;
 
   if (!isset($key)) {
-    // We use the salt from settings.php to make the HMAC key, since
-    // the database is not yet initialized and we can't access any Backdrop variables.
-    // The file properties add more entropy not easily accessible to others.
+    // We use the salt from settings.php to make the HMAC key, since the
+    // database is not yet initialized and we can't access any Backdrop
+    // variables. The file properties add more entropy.
     $key = settings_get('hash_salt') . filectime(__FILE__) . fileinode(__FILE__);
   }
   // Generate a moderately secure HMAC based on the database credentials.
@@ -4137,10 +4180,9 @@ function backdrop_is_dialog() {
  *
  * If Backdrop has entered into background mode, it can no longer print anything
  * to the page, because the response has already been returned to the browser.
- * Anything that has been output while in background mode will simply be
- * silently discarded. Background mode is extremely useful for doing processing
- * that doesn't require output, such as cron job execution or creating cache
- * entries.
+ * Anything that has been output while in background mode will be silently
+ * discarded. Background mode is extremely useful for doing processing that
+ * doesn't require output, such as cron job execution or creating cache entries.
  *
  * Backdrop core uses background mode in two ways:
  *   - After generating a page (logged-in or anonymous) if cron has not run

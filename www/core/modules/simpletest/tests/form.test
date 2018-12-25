@@ -110,7 +110,7 @@ class FormsTestCase extends BackdropWebTestCase {
             }
             if ($type == 'select') {
               // Select elements are going to have validation errors with empty
-              // input, since those are illegal choices. Just make sure the
+              // input, since those are invalid choices. Just make sure the
               // error is not "field is required".
               $this->assertTrue((empty($errors[$element]) || strpos('field is required', $errors[$element]) === FALSE), "Optional '$type' field '$element' is not treated as a required element");
             }
@@ -574,7 +574,8 @@ class FormsTestCase extends BackdropWebTestCase {
     $checkbox = $this->xpath('//input[@name="checkboxes[two]"]');
     $checkbox[0]['value'] = 'FORGERY';
     $this->backdropPost(NULL, array('checkboxes[one]' => TRUE, 'checkboxes[two]' => TRUE), t('Submit'));
-    $this->assertText('An illegal choice has been detected.', 'Input forgery was detected.');
+    $message = t('Invalid option %choice in %name element', array('%choice' => 'FORGERY', '%name' => 'checkboxes'));
+    $this->assertRaw($message, 'Input forgery was detected.');
   }
 }
 
@@ -1875,8 +1876,8 @@ class FormsTriggeringElementTestCase extends BackdropWebTestCase {
     $this->backdropGet($path . '/rs/s');
 
     // Submit the form with 'button1=button1' in the POST data, which someone
-    // trying to get around security safeguards could easily do. We have to do
-    // a little trickery here, to work around the safeguards in backdropPost(): by
+    // trying to get around security safeguards could do. We have to do a little
+    // trickery here, to work around the safeguards in backdropPost(): by
     // renaming the text field that is in the form to 'button1', we can get the
     // data we want into $_POST.
     $elements = $this->xpath('//form[@id="' . $form_html_id . '"]//input[@name="text"]');

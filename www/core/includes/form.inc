@@ -795,7 +795,7 @@ function backdrop_retrieve_form($form_id, &$form_state) {
   $args = $form_state['build_info']['args'];
 
   // We first check to see if there's a function named after the $form_id.
-  // If there is, we simply pass the arguments on to it to get the form.
+  // If there is, we pass the arguments on to it to get the form.
   if (!function_exists($form_id)) {
     // In cases where many form_ids need to share a central constructor function,
     // such as the node editing form, modules can implement hook_forms(). It
@@ -1389,8 +1389,8 @@ function _form_validate(&$elements, &$form_state, $form_id = NULL) {
           $value = in_array($elements['#type'], array('checkboxes', 'tableselect')) ? array_keys($elements['#value']) : $elements['#value'];
           foreach ($value as $v) {
             if (!isset($options[$v])) {
-              form_error($elements, $t('An illegal choice has been detected. Please contact the site administrator.'));
-              watchdog('form', 'Illegal choice %choice in !name element.', array('%choice' => $v, '!name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title']), WATCHDOG_ERROR);
+              form_error($elements, $t('Invalid option %choice in %name element.', array('%choice' => $v, '%name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'])));
+              watchdog('form', 'Invalid option %choice in %name element.', array('%choice' => $v, '%name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title']), WATCHDOG_ERROR);
             }
           }
         }
@@ -1408,8 +1408,8 @@ function _form_validate(&$elements, &$form_state, $form_id = NULL) {
           form_set_value($elements, NULL, $form_state);
         }
         elseif (!isset($options[$elements['#value']])) {
-          form_error($elements, $t('An illegal choice has been detected. Please contact the site administrator.'));
-          watchdog('form', 'Illegal choice %choice in %name element.', array('%choice' => $elements['#value'], '%name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title']), WATCHDOG_ERROR);
+          form_error($elements, $t('Invalid option %choice in %name element.', array('%choice' => $elements['#value'], '%name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title'])));
+          watchdog('form', 'Invalid option %choice in %name element.', array('%choice' => $elements['#value'], '%name' => empty($elements['#title']) ? $elements['#parents'][0] : $elements['#title']), WATCHDOG_ERROR);
         }
       }
     }
@@ -2474,8 +2474,8 @@ function form_type_radios_value(&$element, $input = FALSE) {
     return $input;
   }
   else {
-    // For default value handling, simply return #default_value. Additionally,
-    // for a NULL default value, set #has_garbage_value to prevent
+    // For default value handling, return #default_value. Additionally, for a
+    // NULL default value, set #has_garbage_value to prevent
     // _form_builder_handle_input_element() converting the NULL to an empty
     // string, so that code can distinguish between nothing selected and the
     // selection of a radio button whose value is an empty string.
@@ -3835,11 +3835,11 @@ function form_pre_render_fieldset($element) {
     // If this element belongs to a group, but the group-holding element does
     // not exist, we need to render it (at its original location).
     if (!isset($element['#groups'][$group]['#group_exists'])) {
-      // Intentionally empty to clarify the flow; we simply return $element.
+      // Intentionally empty to clarify the flow. Return $element.
     }
     // If we injected this element into the group, then we want to render it.
     elseif (!empty($element['#group_fieldset'])) {
-      // Intentionally empty to clarify the flow; we simply return $element.
+      // Intentionally empty to clarify the flow. Return $element.
     }
     // Otherwise, this element belongs to a group and the group exists, so we do
     // not render it.
@@ -4892,7 +4892,7 @@ function batch_set($batch_definition) {
 
     // Add the set to the batch.
     if (empty($batch['id'])) {
-      // The batch is not running yet. Simply add the new set.
+      // The batch is not running yet. Add the new set.
       $batch['sets'][] = $batch_set;
     }
     else {
