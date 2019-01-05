@@ -11,12 +11,14 @@
         "tags": 0
     },
     "views": {
-        "archives": 1,
-        "backdrops": 1,
+        "archives": 0,
+        "backdrops": 0,
         "events": 1,
         "file_admin": 0,
         "image_library": 0,
         "node_admin_content": 0,
-        "user_admin": 0
+        "user_admin": 0,
+        "homepage_recent_content": 1,
+        "archives_api": 1
     }
 }
