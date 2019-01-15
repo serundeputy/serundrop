@@ -13,12 +13,14 @@
     "views": {
         "archives": 0,
         "backdrops": 0,
-        "events": 1,
+        "events": 0,
         "file_admin": 0,
         "image_library": 0,
         "node_admin_content": 0,
         "user_admin": 0,
         "homepage_recent_content": 1,
-        "archives_api": 1
+        "archives_api": 1,
+        "events_upcoming_api": 1,
+        "events_past_api": 1
     }
 }
