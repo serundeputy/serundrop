@@ -112,6 +112,7 @@
         ],
         "image_upload": {
             "status": 1,
+            "orientate": 0,
             "scheme": "public",
             "directory": "inline-images",
             "max_size": "",
@@ -119,6 +120,13 @@
                 "width": "",
                 "height": ""
             }
+        },
+        "file_upload": {
+            "status": 1,
+            "scheme": "public",
+            "directory": "inline-files",
+            "max_size": "",
+            "file_extensions": "txt pdf"
         },
         "plugins": {
             "style": {

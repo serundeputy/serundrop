@@ -29,7 +29,8 @@
         "node_user_picture": true,
         "node_permissions": true,
         "language": 0,
-        "hidden_path": "0"
+        "hidden_path": "0",
+        "node_preview": "1"
     },
     "base": "node_content",
     "module": "node",

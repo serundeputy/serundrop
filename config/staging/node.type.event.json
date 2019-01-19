@@ -37,7 +37,8 @@
         "node_user_picture": 1,
         "language": 0,
         "node_permissions": true,
-        "hidden_path": "0"
+        "hidden_path": "0",
+        "node_preview": "1"
     },
     "orig_type": "event"
 }

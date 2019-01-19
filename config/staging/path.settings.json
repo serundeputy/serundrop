@@ -47,7 +47,7 @@
     "user_pattern": "",
     "node_article_pattern": "[node:nid]",
     "taxonomy_term_tags_pattern": "tags/[term:name]",
-    "node_event_pattern": "",
+    "node_event_pattern": "[node:title]",
     "node_junk_pattern": "",
     "node_vid_with_desc_pattern": "",
     "node_page_pattern": "[node:title]"

@@ -93,5 +93,6 @@
         "height": ""
     },
     "site_logo_upload": "",
-    "site_favicon_upload": ""
+    "site_favicon_upload": "",
+    "form_cache_expiration": 21600
 }
