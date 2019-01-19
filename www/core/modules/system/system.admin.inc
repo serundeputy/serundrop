@@ -400,9 +400,10 @@ function system_theme_settings($form, &$form_state, $key) {
   // Process the theme and all its base themes.
   foreach ($theme_keys as $theme) {
     // Include the theme-settings.php file.
-    $filename = BACKDROP_ROOT . '/' . str_replace("/$theme.info", '', $themes[$theme]->filename) . '/theme-settings.php';
-    if (file_exists($filename)) {
-      require_once $filename;
+    $theme_settings_path = backdrop_get_path('theme', $theme) . '/theme-settings.php';
+      if (file_exists(BACKDROP_ROOT . '/' . $theme_settings_path)) {
+        require_once BACKDROP_ROOT . '/' . $theme_settings_path;
+        $form_state['build_info']['files'][] = $theme_settings_path;
     }
 
     // Call theme-specific settings.
@@ -506,7 +507,7 @@ function system_modules($form, $form_state = array()) {
     '#type' => 'textfield',
     '#title' => t('Filter'),
     '#size' => 30,
-    '#placeholder' => t('Enter module name…'),
+    '#placeholder' => t('Search...'),
     '#attributes' => array(
       'class' => array('table-filter-text'),
       'autocomplete' => 'off',
@@ -518,9 +519,9 @@ function system_modules($form, $form_state = array()) {
   // Get current list of modules.
   $files = system_rebuild_module_data();
 
-  // Remove hidden modules from display list.
   $visible_files = $files;
   foreach ($visible_files as $filename => $file) {
+    // Remove hidden modules from the modules list.
     if (!empty($file->info['hidden'])) {
       unset($visible_files[$filename]);
     }
@@ -658,9 +659,6 @@ function system_modules($form, $form_state = array()) {
     );
   }
 
-  // Lastly, sort all fieldsets by title.
-  backdrop_sort($form['modules'], array('#title' => SORT_STRING));
-
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
@@ -695,6 +693,20 @@ function system_sort_themes($a, $b) {
  * Build a table row for the system modules page.
  */
 function _system_modules_build_row($info, $extra) {
+  // Prepare the tag list by ensuring all tags are lower case.
+  $tags = array();
+  if (isset($info['tags'])) {
+    foreach ($info['tags'] as $tag) {
+      $tags[] = check_plain($tag);
+    }
+  }
+  if (isset($info['package'])) {
+    $tags[] = check_plain($info['package']);
+  }
+  if (empty($tags)) {
+    $tags[] = 'Other';
+  }
+
   // Add in the defaults.
   $extra += array(
     'requires' => array(),
@@ -717,6 +729,10 @@ function _system_modules_build_row($info, $extra) {
   $form['version'] = array(
     '#markup' => $info['version'],
   );
+  $form['tags'] = array(
+    '#markup' => implode(', ', $tags),
+  );
+
   $form['#requires'] = $extra['requires'];
   $form['#required_by'] = $extra['required_by'];
   $form['#required_by_distribution'] = $extra['required_by_distribution'];
@@ -858,7 +874,6 @@ function system_modules_submit($form, &$form_state) {
     // the modules out of $form_state.
     $modules = $form_state['storage']['modules'];
   }
-
   // Collect data for all modules to be able to determine dependencies.
   $files = system_rebuild_module_data();
 
@@ -1711,7 +1726,7 @@ function system_file_system_settings() {
     '#title' => t('Private file system path'),
     '#default_value' => config_get('system.core', 'file_private_path'),
     '#maxlength' => 255,
-    '#description' => t('An existing local file system path for storing private files. It should be writable by Backdrop and not accessible over the web. See the online handbook for <a href="@handbook">more information about securing private files</a>.', array('@handbook' => 'http://drupal.org/handbook/modules/file')),
+    '#description' => t('An existing local file system path for storing private files. It should be writable by Backdrop and not accessible over the web. See the online handbook for <a href="@handbook">more information about securing private files</a>.', array('@handbook' => 'https://www.drupal.org/docs/7/core/modules/file/overview')),
     '#after_build' => array('system_check_directory'),
   );
 
