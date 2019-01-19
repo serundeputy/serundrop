@@ -1,6 +1,6 @@
 <?php
 /**
- * big module
+ * Headless allows you to use Backdrop CMS as an API.
  */
 function headless_menu() {
   $items = array();
