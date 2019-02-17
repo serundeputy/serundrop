@@ -10,7 +10,7 @@ config:
   php: '7.0'
   webroot: www
   backdrush: dev
-  database: mariadb
+  database: mariadb:10.2
   xdebug: true
 
 services:
@@ -19,12 +19,10 @@ services:
       - cd $LANDO_MOUNT && composer install
       - composer global require laravel/envoy
   node-cli:
-    type: node:6.10
-    overrides:
-      services:
-        ports:
-          - 3000:3000
-          - 3001:3001
+    type: node:10
+    ports:
+      - 3000:3000
+      - 3001:3001
     globals:
       gulp-cli: "latest"
 
