@@ -10,7 +10,7 @@ Theming Workflow
 
 * Change directories to the root of the project:
   * `cd /path/to/serundeputy`
-* Run `npm install` to get the node dependencies and `gulp`  
+* Run `npm install` to get the node dependencies and `gulp`
   * `lando npm install`
 * To compile and watch sass files type:
   * `lando gulp`

@@ -4,6 +4,7 @@
     "name": "default",
     "title": "Default Layout",
     "description": null,
+    "renderer_name": "standard",
     "module": "layout",
     "weight": 0,
     "storage": 2,
@@ -22,8 +23,7 @@
         ],
         "top": [],
         "content": [
-            "default",
-            "baf9122e-bdd8-4e5f-a500-d8753c2096ab"
+            "default"
         ],
         "footer": [
             "6b12fb43-3b0c-468b-aa00-a43fc6e44894"
@@ -135,40 +135,6 @@
                         }
                     }
                 }
-            }
-        },
-        "baf9122e-bdd8-4e5f-a500-d8753c2096ab": {
-            "plugin": "serundeputy_tweets:serundeputy_tweets_block",
-            "data": {
-                "module": "serundeputy_tweets",
-                "delta": "serundeputy_tweets_block",
-                "settings": {
-                    "title_display": "default",
-                    "title": "",
-                    "style": "default",
-                    "block_settings": [],
-                    "contexts": []
-                },
-                "uuid": "baf9122e-bdd8-4e5f-a500-d8753c2096ab",
-                "style": {
-                    "plugin": "default",
-                    "data": {
-                        "settings": {
-                            "classes": ""
-                        }
-                    }
-                },
-                "conditions": [
-                    {
-                        "plugin": "front",
-                        "data": {
-                            "settings": {
-                                "negate": false,
-                                "load_condition_nojs": "Load condition"
-                            }
-                        }
-                    }
-                ]
             }
         },
         "6b12fb43-3b0c-468b-aa00-a43fc6e44894": {
