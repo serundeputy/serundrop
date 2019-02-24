@@ -316,7 +316,7 @@ description = Tests some  functionality of the view class.
 group = Views
 file = views_view.test
 
-; Added by Backdrop CMS packaging script on 2019-02-08
+; Added by Backdrop CMS packaging script on 2019-02-20
 project = backdrop
-version = 1.12.2
-timestamp = 1549674456
+version = 1.12.3
+timestamp = 1550696223
