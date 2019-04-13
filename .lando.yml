@@ -28,6 +28,9 @@ services:
 
 # See: https://docs.lndo.io/config/tooling.html
 tooling:
+  drush:
+    service: appserver
+    cmd: drush --root=/app/www --uri=https://serundeputy.lndo.site
   envoy:
     service: appserver
   npm:
