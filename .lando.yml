@@ -18,13 +18,6 @@ services:
     run:
       - cd $LANDO_MOUNT && composer install
       - composer global require laravel/envoy
-  node-cli:
-    type: node:10
-    ports:
-      - 3000:3000
-      - 3001:3001
-    globals:
-      gulp-cli: "latest"
 
 # See: https://docs.lndo.io/config/tooling.html
 tooling:
@@ -33,10 +26,4 @@ tooling:
     cmd: drush --root=/app/www --uri=https://serundeputy.lndo.site
   envoy:
     service: appserver
-  npm:
-    service: node-cli
-  node:
-    service: node-cli
-  gulp:
-    service: node-cli
 
