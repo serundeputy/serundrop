@@ -28,12 +28,12 @@ services:
         - cd ~/.drush/commands/ && unzip 1.x-0.x.zip -d backdrop
 
         # Link the serundrop webroot
-        - ln -sf "${TUGBOAT_ROOT}/serundrop" "${DOCROOT}"
+        - ln -sf "${TUGBOAT_ROOT}" "${DOCROOT}"
           # - cp -av "${TUGBOAT_ROOT}/config
 
         # Use the tugboat-specific Backdrop settings
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php"
-          "${DOCROOT}/settings.php"
+          "${DOCROOT}/www/settings.php"
 
         # Setup the necessary file permissions.
         - mkdir -p "${DOCROOT}/files"
@@ -45,8 +45,8 @@ services:
       # and update steps, because the results of those are inherited
       # from the base preview.
       build:
-        - drush -r "${DOCROOT}" cache-clear all
-        - drush -r "${DOCROOT}" updatedb -y
+        - drush -r "${DOCROOT}/www" cache-clear all
+        - drush -r "${DOCROOT}/www" updatedb -y
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
