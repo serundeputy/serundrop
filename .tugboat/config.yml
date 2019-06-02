@@ -32,7 +32,7 @@ services:
 
         # Use the tugboat-specific Backdrop settings
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php"
-          "${DOCROOT}"
+          "${DOCROOT}/settings.php"
 
         # Setup the necessary file permissions.
         - mkdir -p "${DOCROOT}/files"
