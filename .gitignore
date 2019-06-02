@@ -5,6 +5,7 @@
 settings.php
 settings.local.php
 sites/*/settings*.php
+!.tugboat/settings.*.php
 
 # Ignore active config.
 config/active

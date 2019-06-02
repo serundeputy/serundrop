@@ -27,17 +27,12 @@ services:
         - cd ~/.drush/commands/ && wget https://github.com/backdrop-contrib/drush/archive/1.x-0.x.zip
         - cd ~/.drush/commands/ && unzip 1.x-0.x.zip -d backdrop
 
-        # Download Backdrop and link the docroot.
-        - drush download-backdrop backdrop
-        - ln -snf "${TUGBOAT_ROOT}/backdrop" "${DOCROOT}"
+        # Link the serundrop webroot
+        - ln -snf "${TUGBOAT_ROOT}/serundrop/www" "${DOCROOT}"
 
-        # Install Backdrop and the database. Change the admin password.
-        # The variable ${ADMIN_PWD} is an environment variables coming
-        # from Tugboat on the Repository Settings page. You must set
-        # this up ahead of time. See the screenshot in this repos to know
-        # what it looks like.
-        - drush -r "${DOCROOT}" site-install --db-url="mysql://tugboat:tugboat@mysql/tugboat" -y
-        - drush -r "${DOCROOT}" user-password admin --password="${ADMIN_PWD}"
+        # Use the tugboat-specific Backdrop settings
+        - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php"
+          "${DOCROOT}"
 
         # Setup the necessary file permissions.
         - mkdir -p "${DOCROOT}/files"
