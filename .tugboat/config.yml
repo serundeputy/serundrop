@@ -29,7 +29,7 @@ services:
 
         # Link the serundrop webroot
         - ln -sf "${TUGBOAT_ROOT}/www" "${DOCROOT}"
-        - cp -av "${TUGBOAT_ROOT}/config/staging ${TUGBOAT_ROOT}/config/active"
+        - cp -av "${TUGBOAT_ROOT}/config/staging" "${TUGBOAT_ROOT}/config/active"
 
         # Use the tugboat-specific Backdrop settings
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php"
