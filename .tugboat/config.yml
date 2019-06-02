@@ -41,6 +41,8 @@ services:
         - chmod -R 755 "${TUGBOAT_ROOT}/www"
         - chown -R www-data "${DOCROOT}/files"
         - chmod -R 744 "${DOCROOT}/files"
+        - chown -R www-data "${TUGBOAT_ROOT}/config"
+        - chmod -R 744 "${TUGBOAT_ROOT}/config"
 
       # Commands that build the site. When a preview is built from a
       # base preview, the build workflow starts here, skipping the init
