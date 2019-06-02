@@ -28,7 +28,7 @@ services:
         - cd ~/.drush/commands/ && unzip 1.x-0.x.zip -d backdrop
 
         # Link the serundrop webroot
-        - ln -snf "${TUGBOAT_ROOT}/serundrop/www" "${DOCROOT}"
+        - ln -sf "${TUGBOAT_ROOT}/serundrop/www" "${DOCROOT}"
 
         # Use the tugboat-specific Backdrop settings
         - cp "${TUGBOAT_ROOT}/.tugboat/settings.local.php"
