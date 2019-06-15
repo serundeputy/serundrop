@@ -7,9 +7,9 @@ recipe: backdrop
 # Configure the Backdrop recipe
 config:
   via: nginx
-  php: '7.0'
+  php: '7.3'
   webroot: www
-  backdrush: dev
+  backdrush: 0.2.0
   database: mariadb:10.2
   xdebug: true
 

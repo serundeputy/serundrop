@@ -69,7 +69,7 @@ function views_api_minimum_version() {
 }
 
 /**
- * Implement hook_theme(). Register views theming functions.
+ * Implement hook_theme(). Register views theme functions.
  */
 function views_theme($existing, $type, $theme, $path) {
   $path = backdrop_get_path('module', 'views');
@@ -562,11 +562,6 @@ function views_preprocess_layout(&$variables) {
     // If a module is still putting in the display like we used to, catch that.
     if (is_subclass_of($view, 'views_plugin_display')) {
       $view = $view->view;
-    }
-
-    // Since views exposed filters do not have a current display, test first.
-    if (property_exists($view, 'current_display') && isset($view->current_display)) {
-      views_add_contextual_links($variables['content'], 'page', $view, $view->current_display);
     }
   }
 }

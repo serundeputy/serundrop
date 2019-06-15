@@ -401,7 +401,11 @@ function layout_settings_form($form, &$form_state, Layout $layout) {
     $form['conditions']['active'][$access_key]['label'] = array(
       '#markup' => $layout_access->summary(),
     );
-    $form['conditions']['active'][$access_key]['remove'] = array(
+    $form['conditions']['active'][$access_key]['operations'] = array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('layout-operations')),
+    );
+    $form['conditions']['active'][$access_key]['operations']['remove'] = array(
       '#type' => 'submit',
       '#value' => t('Remove'),
       '#attributes' => array('class' => array('layout-link-button', 'layout-access-remove')),
@@ -415,7 +419,7 @@ function layout_settings_form($form, &$form_state, Layout $layout) {
       ),
       '#name' => 'conditions_' . $access_key . '_remove',
     );
-    $form['conditions']['active'][$access_key]['configure'] = array(
+    $form['conditions']['active'][$access_key]['operations']['configure'] = array(
       '#type' => 'submit',
       '#value' => t('Configure'),
       '#attributes' => array('class' => array('layout-link-button', 'layout-access-configure')),
@@ -1581,36 +1585,33 @@ function layout_condition_add_form($form, &$form_state, Layout $layout = NULL, B
     $form['#redirect'] = 'admin/structure/layouts/menu/' . $menu_item->name . '/access';
     if ($is_new_condition) {
       $form['#title'] = t('Add visibility condition');
-      $help = t('Add a new visibility condition to restrict access to all layouts at this path.');
     }
     else {
       $form['#title'] = t('Configure visibility condition');
-      $help = t('Configure this visibility condition to restrict access to all layouts on this path.');
     }
+    $help = t('Restrict access to all layouts at this path.');
     $handler = isset($menu_item->conditions[$condition_id]) ? $menu_item->conditions[$condition_id] : NULL;
   }
   elseif (isset($block)) {
     $form['#redirect'] = 'admin/structure/layouts/manage/' . $layout->name;
     if ($is_new_condition) {
       $form['#title'] = t('Add visibility condition for "!title" block', array('!title' => $block->getAdminTitle()));
-      $help = t('Add a new visibility condition to limit the situations in which this block will be shown.');
     }
     else {
       $form['#title'] = t('Configure visibility condition for "!title" block', array('!title' => $block->getAdminTitle()));
-      $help = t('Configure this visibility condition to limit the situations in which this block will be shown.');
     }
+    $help = t('Limit the situations in which this block will be shown.');
     $handler = isset($block->conditions[$condition_id]) ? $block->conditions[$condition_id] : NULL;
   }
   else {
     $form['#redirect'] = 'admin/structure/layouts/manage/' . $layout->name . '/configure';
     if ($is_new_condition) {
       $form['#title'] = t('Add visibility condition for "@title" layout', array('@title' => $layout->title));
-      $help = t('Add a new visibility condition to limit the situations in which this layout will apply.');
     }
     else {
       $form['#title'] = t('Configure visibility condition for "@title" layout', array('@title' => $layout->title));
-      $help = t('Configure this visibility condition to limit the situations in which this layout will apply.');
     }
+    $help = t('Limit the situations in which this layout will apply.');
     $handler = isset($layout->conditions[$condition_id]) ? $layout->conditions[$condition_id] : NULL;
   }
   $form['help'] = array(
@@ -2055,6 +2056,10 @@ function layout_clone_form_submit($form, &$form_state) {
   $layout = $form_state['layout'];
   $layout->title = $form_state['values']['title'];
   $layout->name = $form_state['values']['name'];
+  if (!empty($layout->menu_item)) {
+    $layout->menu_item->menu['title'] = $form_state['values']['name'];
+    $layout->menu_item->name = $form_state['values']['name'];
+  }
   $layout->save();
 
   // Redirect to the full settings form.
@@ -2760,9 +2765,9 @@ function layout_configure_region_page($form, &$form_state, Layout $layout, $rend
     '#title' => t('CSS classes for inner wrapper'),
     '#type' => 'textfield',
     '#default_value' => isset($layout->settings[$region_name]['classes']) ? $layout->settings[$region_name]['classes'] : '',
-    '#description' => t('Separate multiple classes with spaces.'),
+    '#description' => t('Available only after selecting an HTML element. Separate multiple classes with spaces.'),
     '#states' => array(
-      'invisible' => array(
+      'disabled' => array(
         ':input[name="element"]' => array('value' => ''),
       ),
     ),
