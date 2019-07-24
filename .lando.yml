@@ -9,7 +9,7 @@ config:
   via: nginx
   php: '7.3'
   webroot: www
-  backdrush: 0.2.0
+  backdrush: 1.0.0
   database: mariadb:10.2
   xdebug: true
 

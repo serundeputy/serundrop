@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * headless.install
+ * Remove config after uninstalling headless.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function headless_uninstall() {
+  $config = config('headless.settings');
+  $config->delete();
+}

@@ -2,9 +2,10 @@ name = Headless
 description = "Headless is an API to deliver nodes and lists of nodes as JSON data."
 backdrop = 1.x
 type = module
-version = 1.x-1.0.0
 
-; Added by Backdrop CMS packaging script on 2019-01-19
+configure = admin/config/services/headless
+
+; Added by Backdrop CMS packaging script on 2019-07-21
 project = headless
-version = 1.x-1.2.0
-timestamp = 1547927333
+version = 1.x-1.3.0
+timestamp = 1563715472
