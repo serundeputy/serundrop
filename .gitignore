@@ -40,3 +40,5 @@ modules/contrib/codefilter/
 ################
 www/modules/contrib/devel
 /config/staging/devel.settings.json
+
+tst.php
