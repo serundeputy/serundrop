@@ -33,11 +33,11 @@ tooling:
       - appserver: envoy run pull
       - database: /helpers/sql-import.sh db.sql
       - appserver: rm db.sql
-      - appserver: rm -rf /app/web/files
+      - appserver: rm -rf /app/www/files
       - appserver: tar xvzf f.tgz -C /app/web
       - appserver: rm f.tgz
   deploy:
     service: appserver
-    description: Deploy to aturnintime.com production
+    description: Deploy to production
     cmd:
       - appserver: envoy run deploy --branch=master
