@@ -26,4 +26,18 @@ tooling:
     cmd: drush --root=/app/www --uri=https://serundeputy.lndo.site
   envoy:
     service: appserver
-
+  pull:
+    service: appserver
+    description: Pull and import the database from production.
+    cmd:
+      - appserver: envoy run pull
+      - database: /helpers/sql-import.sh db.sql
+      - appserver: rm db.sql
+      - appserver: rm -rf /app/web/files
+      - appserver: tar xvzf f.tgz -C /app/web
+      - appserver: rm f.tgz
+  deploy:
+    service: appserver
+    description: Deploy to aturnintime.com production
+    cmd:
+      - appserver: envoy run deploy --branch=master

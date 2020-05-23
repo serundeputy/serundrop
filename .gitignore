@@ -32,6 +32,7 @@ vendor
 .idea
 *.idea/*
 .*.swp
+.env
 
 # Ignoring these modules while they are less than stable.
 modules/contrib/codefilter/
